@@ -16,8 +16,8 @@
       	redir https://www.bonjour.zone{uri}
       }
       www.bonjour.zone {
-      	reverse_proxy https://bonjour-zone-www.oss-cn-beijing-internal.aliyuncs.com {
-      		header_up Host bonjour-zone-www.oss-cn-beijing-internal.aliyuncs.com
+      	reverse_proxy https://bonjour-www.oss-cn-beijing-internal.aliyuncs.com {
+      		header_up Host bonjour-www.oss-cn-beijing-internal.aliyuncs.com
       		header_down -Content-Disposition
       	}
       }
