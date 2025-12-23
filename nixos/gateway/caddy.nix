@@ -69,8 +69,8 @@
     labels = {"io.containers.autoupdate" = "registry";};
   };
   networking.hosts."192.168.59.255" = [
-    "bonjour-zone-vault.oss-cn-beijing-internal.aliyuncs.com"
-    "bonjour-zone-files.oss-cn-beijing-internal.aliyuncs.com"
-    "bonjour-zone-chat.oss-cn-beijing-internal.aliyuncs.com"
+    "bonjour-vault.oss-cn-beijing-internal.aliyuncs.com"
+    "bonjour-files.oss-cn-beijing-internal.aliyuncs.com"
+    "bonjour-chat.oss-cn-beijing-internal.aliyuncs.com"
   ];
 }
