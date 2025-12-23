@@ -69,7 +69,7 @@
               timezone: Asia/Shanghai
               apk_repos:
                 alpine_repo:
-                  base_url: http://mirrors.tuna.tsinghua.edu.cn/alpine
+                  base_url: http://mirrors.cernet.edu.cn/alpine
                   version: latest-stable
                   community_enabled: true
               package_update: true
