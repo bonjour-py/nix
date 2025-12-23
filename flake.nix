@@ -5,6 +5,6 @@
   };
 
   outputs = {self, nixos}:{
-    nixosConfigurations = nixos.nixosConfigurations
+    nixosConfigurations = nixos.nixosConfigurations;
   };
 }

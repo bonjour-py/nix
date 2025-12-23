@@ -6,7 +6,7 @@
   outputs = {self, server, gateway}:{
     nixosConfigurations = {
       server = server.nixosConfigurations.server;
-      gateway = server.nixosConfigurations.gateway;
+      gateway = gateway.nixosConfigurations.gateway;
     };
   };
 }
