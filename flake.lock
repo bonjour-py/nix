@@ -1,0 +1,678 @@
+{
+  "nodes": {
+    "common": {
+      "locked": {
+        "path": "./common",
+        "type": "path"
+      },
+      "original": {
+        "path": "./common",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "common_2": {
+      "locked": {
+        "path": "./common",
+        "type": "path"
+      },
+      "original": {
+        "path": "./common",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "common_3": {
+      "locked": {
+        "path": "./common",
+        "type": "path"
+      },
+      "original": {
+        "path": "./common",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765121682,
+        "narHash": "sha256-4VBOP18BFeiPkyhy9o4ssBNQEvfvv1kXkasAYd0+rrA=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "65f23138d8d09a92e30f1e5c87611b23ef451bf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-compat_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765121682,
+        "narHash": "sha256-4VBOP18BFeiPkyhy9o4ssBNQEvfvv1kXkasAYd0+rrA=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "65f23138d8d09a92e30f1e5c87611b23ef451bf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-compat_3": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765121682,
+        "narHash": "sha256-4VBOP18BFeiPkyhy9o4ssBNQEvfvv1kXkasAYd0+rrA=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "65f23138d8d09a92e30f1e5c87611b23ef451bf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "gateway": {
+      "inputs": {
+        "nixos": "nixos",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "path": "./gateway",
+        "type": "path"
+      },
+      "original": {
+        "path": "./gateway",
+        "type": "path"
+      },
+      "parent": [
+        "servers"
+      ]
+    },
+    "hardware": {
+      "inputs": {
+        "wsl": "wsl"
+      },
+      "locked": {
+        "path": "./hardware",
+        "type": "path"
+      },
+      "original": {
+        "path": "./hardware",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "hardware_2": {
+      "inputs": {
+        "wsl": "wsl_2"
+      },
+      "locked": {
+        "path": "./hardware",
+        "type": "path"
+      },
+      "original": {
+        "path": "./hardware",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "hardware_3": {
+      "inputs": {
+        "wsl": "wsl_3"
+      },
+      "locked": {
+        "path": "./hardware",
+        "type": "path"
+      },
+      "original": {
+        "path": "./hardware",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "incus": {
+      "locked": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "original": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "incus_2": {
+      "locked": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "original": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "incus_3": {
+      "locked": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "original": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "laptop": {
+      "inputs": {
+        "nixos": "nixos_2",
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "path": "./laptop",
+        "type": "path"
+      },
+      "original": {
+        "path": "./laptop",
+        "type": "path"
+      },
+      "parent": [
+        "servers"
+      ]
+    },
+    "network": {
+      "locked": {
+        "path": "./network",
+        "type": "path"
+      },
+      "original": {
+        "path": "./network",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "network_2": {
+      "locked": {
+        "path": "./network",
+        "type": "path"
+      },
+      "original": {
+        "path": "./network",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "network_3": {
+      "locked": {
+        "path": "./network",
+        "type": "path"
+      },
+      "original": {
+        "path": "./network",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "nixos": {
+      "inputs": {
+        "common": "common",
+        "hardware": "hardware",
+        "incus": "incus",
+        "network": "network",
+        "podman": "podman",
+        "users": "users",
+        "wireguard": "wireguard"
+      },
+      "locked": {
+        "path": "../../nixos",
+        "type": "path"
+      },
+      "original": {
+        "path": "../../nixos",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway"
+      ]
+    },
+    "nixos_2": {
+      "inputs": {
+        "common": "common_2",
+        "hardware": "hardware_2",
+        "incus": "incus_2",
+        "network": "network_2",
+        "podman": "podman_2",
+        "users": "users_2",
+        "wireguard": "wireguard_2"
+      },
+      "locked": {
+        "path": "../../nixos",
+        "type": "path"
+      },
+      "original": {
+        "path": "../../nixos",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop"
+      ]
+    },
+    "nixos_3": {
+      "inputs": {
+        "common": "common_3",
+        "hardware": "hardware_3",
+        "incus": "incus_3",
+        "network": "network_3",
+        "podman": "podman_3",
+        "users": "users_3",
+        "wireguard": "wireguard_3"
+      },
+      "locked": {
+        "path": "../../nixos",
+        "type": "path"
+      },
+      "original": {
+        "path": "../../nixos",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server"
+      ]
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1765472234,
+        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1766473571,
+        "narHash": "sha256-5G1NDO2PulBx1RoaA6U1YoUDX0qZslpPxv+n5GX6Qto=",
+        "ref": "nixos-25.11",
+        "rev": "76701a179d3a98b07653e2b0409847499b2a07d3",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      },
+      "original": {
+        "ref": "nixos-25.11",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1765472234,
+        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1766309749,
+        "narHash": "sha256-3xY8CZ4rSnQ0NqGhMKAy5vgC+2IVK0NoVEzDoOh4DA4=",
+        "ref": "nixos-unstable",
+        "rev": "a6531044f6d0bef691ea18d4d4ce44d0daa6e816",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      },
+      "original": {
+        "ref": "nixos-unstable",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1765472234,
+        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1766473571,
+        "narHash": "sha256-5G1NDO2PulBx1RoaA6U1YoUDX0qZslpPxv+n5GX6Qto=",
+        "ref": "nixos-25.11",
+        "rev": "76701a179d3a98b07653e2b0409847499b2a07d3",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      },
+      "original": {
+        "ref": "nixos-25.11",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      }
+    },
+    "podman": {
+      "locked": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "original": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "podman_2": {
+      "locked": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "original": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "podman_3": {
+      "locked": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "original": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "root": {
+      "inputs": {
+        "servers": "servers"
+      }
+    },
+    "server": {
+      "inputs": {
+        "nixos": "nixos_3",
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "path": "./server",
+        "type": "path"
+      },
+      "original": {
+        "path": "./server",
+        "type": "path"
+      },
+      "parent": [
+        "servers"
+      ]
+    },
+    "servers": {
+      "inputs": {
+        "gateway": "gateway",
+        "laptop": "laptop",
+        "server": "server"
+      },
+      "locked": {
+        "path": "./servers",
+        "type": "path"
+      },
+      "original": {
+        "path": "./servers",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "users": {
+      "locked": {
+        "path": "./users",
+        "type": "path"
+      },
+      "original": {
+        "path": "./users",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "users_2": {
+      "locked": {
+        "path": "./users",
+        "type": "path"
+      },
+      "original": {
+        "path": "./users",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "users_3": {
+      "locked": {
+        "path": "./users",
+        "type": "path"
+      },
+      "original": {
+        "path": "./users",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "wireguard": {
+      "locked": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "original": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "gateway",
+        "nixos"
+      ]
+    },
+    "wireguard_2": {
+      "locked": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "original": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "laptop",
+        "nixos"
+      ]
+    },
+    "wireguard_3": {
+      "locked": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "original": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "parent": [
+        "servers",
+        "server",
+        "nixos"
+      ]
+    },
+    "wsl": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1765841014,
+        "narHash": "sha256-55V0AJ36V5Egh4kMhWtDh117eE3GOjwq5LhwxDn9eHg=",
+        "owner": "nix-community",
+        "repo": "NixOS-WSL",
+        "rev": "be4af8042e7a61fa12fda58fe9a3b3babdefe17b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "main",
+        "repo": "NixOS-WSL",
+        "type": "github"
+      }
+    },
+    "wsl_2": {
+      "inputs": {
+        "flake-compat": "flake-compat_2",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1765841014,
+        "narHash": "sha256-55V0AJ36V5Egh4kMhWtDh117eE3GOjwq5LhwxDn9eHg=",
+        "owner": "nix-community",
+        "repo": "NixOS-WSL",
+        "rev": "be4af8042e7a61fa12fda58fe9a3b3babdefe17b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "main",
+        "repo": "NixOS-WSL",
+        "type": "github"
+      }
+    },
+    "wsl_3": {
+      "inputs": {
+        "flake-compat": "flake-compat_3",
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "lastModified": 1765841014,
+        "narHash": "sha256-55V0AJ36V5Egh4kMhWtDh117eE3GOjwq5LhwxDn9eHg=",
+        "owner": "nix-community",
+        "repo": "NixOS-WSL",
+        "rev": "be4af8042e7a61fa12fda58fe9a3b3babdefe17b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "main",
+        "repo": "NixOS-WSL",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

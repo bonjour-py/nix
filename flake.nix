@@ -1,10 +1,16 @@
 {
   description = "bonjour";
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      "https://mirrors.cernet.edu.cn/nix-channels/store"
+    ];
+  };
   inputs = {
-    nixos.url = "./nixos";
+    servers.url = "./servers";
   };
 
-  outputs = {self, nixos}:{
-    nixosConfigurations = nixos.nixosConfigurations;
+  outputs = {self, servers}:{
+    nixosConfigurations = servers.nixosConfigurations;
   };
 }
