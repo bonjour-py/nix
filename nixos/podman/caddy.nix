@@ -40,14 +40,6 @@
       		header_up Host {host}
       	}
       }
-      http://bonjour-sts.oss-cn-beijing-internal.aliyuncs.com {
-      	@local {
-      		remote_ip 192.168.59.0/24
-      	}
-      	reverse_proxy @local http://100.100.100.200 {
-      		rewrite /latest/meta-data/ram/security-credentials{uri}
-      	}
-      }
     '';
   };
   systemd.tmpfiles.settings.caddy."/root/caddy"."0" = {
@@ -79,6 +71,5 @@
     "bonjour-vault.oss-cn-beijing-internal.aliyuncs.com"
     "bonjour-files.oss-cn-beijing-internal.aliyuncs.com"
     "bonjour-chat.oss-cn-beijing-internal.aliyuncs.com"
-    "bonjour-sts.oss-cn-beijing-internal.aliyuncs.com"
   ];
 }
