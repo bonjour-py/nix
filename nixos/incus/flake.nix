@@ -9,10 +9,7 @@
           preseed.config."core.https_address" = "[::]:443";
         };
         security.apparmor.enable = true;
-        networking.firewall = {
-          trustedInterfaces = ["incusbr-bonjour"];
-          allowedTCPPorts = [ 80 443 ];
-        };
+        networking.firewall.allowedTCPPorts = [ 80 443 ];
       };
       server = {
         imports = [self.nixosModules.default];
@@ -47,20 +44,11 @@
           storage_pools = [
             {
               config = {
-                source = "/var/lib/incus/storage-pools/bonjour";
-                "volatile.initial_source" = "/var/lib/incus/storage-pools/bonjour";
+                source = "/var/lib/incus/storage-pools/default";
+                "volatile.initial_source" = "/var/lib/incus/storage-pools/default";
               };
               description = "";
-              name = "bonjour";
-              driver = "btrfs";
-            }
-            {
-              config = {
-                source = "/var/lib/incus/storage-pools/work";
-                "volatile.initial_source" = "/var/lib/incus/storage-pools/work";
-              };
-              description = "";
-              name = "work";
+              name = "default";
               driver = "btrfs";
             }
           ];
@@ -104,7 +92,7 @@
                 };
                 root = {
                   path = "/";
-                  pool = "bonjour";
+                  pool = "default";
                   type = "disk";
                 };
               };
@@ -123,7 +111,7 @@
                 };
                 root = {
                   path = "/";
-                  pool = "work";
+                  pool = "default";
                   type = "disk";
                 };
               };
@@ -207,6 +195,7 @@
           dns = ["192.168.59.30"];
           domains = ["~server.bonjour"];
         };
+        networking.firewall.trustedInterfaces = ["incusbr-bonjour"];
         users.users.bonjour.extraGroups = ["incus-admin"];
       };
       gateway = {};
