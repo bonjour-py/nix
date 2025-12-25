@@ -33,11 +33,8 @@
       chat.bonjour.zone {
       	reverse_proxy http://chat.server.bonjour
       }
-      turn.bonjour.zone {
-      	abort
-      }
       http://*.oss-cn-beijing-internal.aliyuncs.com {
-      	reverse_proxy https://oss-cn-beijing-internal.aliyuncs.com {
+      	reverse_proxy remote_ip 192.168.59.0/24 https://oss-cn-beijing-internal.aliyuncs.com {
       		header_up Host {host}
       	}
       }
