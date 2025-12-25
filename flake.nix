@@ -7,10 +7,10 @@
     ];
   };
   inputs = {
-    servers.url = "./servers";
+    nixos.url = "./nixos";
   };
 
-  outputs = {self, servers}:{
-    nixosConfigurations = servers.nixosConfigurations;
+  outputs = {self, nixos}:{
+    nixosConfigurations = nixos.nixosConfigurations;
   };
 }

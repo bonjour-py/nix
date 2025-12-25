@@ -61,7 +61,7 @@
         swapDevices = [{device = "/dev/vda3";}];
       };
       laptop = {
-        imports = [self.nixosModules.default];
+        imports = [wsl.nixosModules.default];
         wsl.enable = true;
       };
     };
