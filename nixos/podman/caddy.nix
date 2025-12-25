@@ -7,7 +7,6 @@
     mode = "0644";
     text = ''
       {
-      	admin off
       	grace_period 10s
       	email bot@bonjour.zone
       }
@@ -34,8 +33,19 @@
       	reverse_proxy http://chat.server.bonjour
       }
       http://*.oss-cn-beijing-internal.aliyuncs.com {
-      	reverse_proxy remote_ip 192.168.59.0/24 https://oss-cn-beijing-internal.aliyuncs.com {
+      	@local {
+      		remote_ip 192.168.59.0/24
+      	}
+      	reverse_proxy @local https://oss-cn-beijing-internal.aliyuncs.com {
       		header_up Host {host}
+      	}
+      }
+      http://bonjour-sts.oss-cn-beijing-internal.aliyuncs.com {
+      	@local {
+      		remote_ip 192.168.59.0/24
+      	}
+      	reverse_proxy @local http://100.100.100.200 {
+      		rewrite /latest/meta-data/ram/security-credentials{uri}
       	}
       }
     '';
@@ -69,5 +79,6 @@
     "bonjour-vault.oss-cn-beijing-internal.aliyuncs.com"
     "bonjour-files.oss-cn-beijing-internal.aliyuncs.com"
     "bonjour-chat.oss-cn-beijing-internal.aliyuncs.com"
+    "bonjour-sts.oss-cn-beijing-internal.aliyuncs.com"
   ];
 }
