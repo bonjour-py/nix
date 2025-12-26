@@ -200,8 +200,6 @@
         networking.firewall.trustedInterfaces = ["incusbr-bonjour"];
         users.users.bonjour.extraGroups = ["incus-admin"];
       };
-      gateway = {};
-      laptop = {};
     };
   };
 }

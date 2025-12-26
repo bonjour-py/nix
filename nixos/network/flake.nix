@@ -20,7 +20,6 @@
         };
       };
       gateway = self.nixosModules.default;
-      laptop = {};
     };
   };
 }

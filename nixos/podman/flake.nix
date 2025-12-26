@@ -12,7 +12,6 @@
         };
         networking.firewall.trustedInterfaces = ["podman"];
       };
-      server = {};
       gateway = {
         imports = [
           self.nixosModules.default
@@ -35,7 +34,6 @@
           domains = ["~gateway.bonjour"];
         };
       };
-      laptop = {};
     };
   };
 }

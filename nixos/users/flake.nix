@@ -19,9 +19,7 @@
       };
       server = self.nixosModules.default;
       gateway = self.nixosModules.default;
-      laptop = {
-        wsl.defaultUser = "bonjour";
-      };
+      laptop.wsl.defaultUser = "bonjour";
     };
   };
 }
