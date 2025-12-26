@@ -63,6 +63,7 @@
       laptop = {
         imports = [wsl.nixosModules.default];
         wsl.enable = true;
+        programs.ld-linux.enable = true;
       };
     };
   };
