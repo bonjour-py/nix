@@ -118,13 +118,6 @@
                   package_update: true
                   package_upgrade: true
                   package_reboot_if_required: true
-                  ssh_genkeytypes: [ed25519]
-                  user:
-                    name: bonjour
-                    gecos: Bonjour LI,bonjour@bonjour.zone
-                    sudo: ALL=(ALL) NOPASSWD:ALL
-                  ssh_authorized_keys:
-                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFU1BO8fzrt6bmud/+q/Jqm7UK8hXJZvA7wCIi11Cec+ BonjourLI
                 '';
               };
               description = "Default Incus profile for project bonjour";

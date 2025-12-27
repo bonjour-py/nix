@@ -24,7 +24,7 @@
       	reverse_proxy https://qiye.aliyun.com
       }
       vault.bonjour.zone {
-      	reverse_proxy http://vault.server.bonjour
+      	reverse_proxy http://vault.server.bonjour:8000
       }
       files.bonjour.zone {
       	reverse_proxy http://files.server.bonjour:9200
