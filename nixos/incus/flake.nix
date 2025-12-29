@@ -76,11 +76,21 @@
         networking.firewall.allowedTCPPorts = [ 80 443 ];
       };
       server = {
-        imports = [self.nixosModules.default];
+        imports = [
+          self.nixosModules.default
+          ./server
+          ];
         virtualisation.incus.preseed = {
-          config."user.ui.title" = "server.bonjour";
+          config = {
+            "user.ui.title" = "server.bonjour";
+            "core.https_trusted_proxy" = "192.168.59.255";
+          };
           networks = [
             {
+              project = "default";
+              name = "incusbr-bonjour";
+              type = "bridge";
+              description = "";
               config = {
                 "dns.domain" = "server.bonjour";
                 "dns.search" = "server.bonjour";
@@ -88,95 +98,15 @@
                 "ipv4.nat" = "true";
                 "ipv6.address" = "none";
               };
-              description = "";
-              name = "incusbr-bonjour";
-              type = "bridge";
-              project = "default";
             }
             {
+              project = "default";
+              name = "incusmacv";
+              type = "macvlan";
+              description = "";
               config = {
                 parent = "eno1";
               };
-              description = "";
-              name = "incusmacv";
-              type = "macvlan";
-              project = "default";
-            }
-          ];
-          profiles = [
-            {
-              config = {
-                "cloud-init.vendor-data" = ''
-                  #cloud-config
-                  locale: zh_CN
-                  timezone: Asia/Shanghai
-                  apk_repos:
-                    alpine_repo:
-                      base_url: http://mirrors.cernet.edu.cn/alpine
-                      version: latest-stable
-                      community_enabled: true
-                  package_update: true
-                  package_upgrade: true
-                  package_reboot_if_required: true
-                '';
-              };
-              description = "Default Incus profile for project bonjour";
-              devices = {
-                eth0 = {
-                  network = "incusbr-bonjour";
-                  type = "nic";
-                };
-                root = {
-                  path = "/";
-                  pool = "default";
-                  type = "disk";
-                };
-              };
-              name = "default";
-              project = "bonjour";
-            }
-            {
-              config = {
-                "security.nesting" = "true";
-              };
-              description = "Default Incus profile for project work";
-              devices = {
-                eth0 = {
-                  network = "incusmacv";
-                  type = "nic";
-                };
-                root = {
-                  path = "/";
-                  pool = "default";
-                  type = "disk";
-                };
-              };
-              name = "default";
-              project = "work";
-            }
-          ];
-          projects = [
-            {
-              config = {
-                "features.images" = "true";
-                "features.profiles" = "true";
-                "features.storage.buckets" = "true";
-                "features.storage.volumes" = "true";
-                restricted = "false";
-              };
-              description = "";
-              name = "bonjour";
-            }
-            {
-              config = {
-                "features.images" = "true";
-                "features.profiles" = "true";
-                "features.storage.buckets" = "true";
-                "features.storage.volumes" = "true";
-                restricted = "false";
-              };
-              description = "";
-              name = "work";
             }
           ];
         };

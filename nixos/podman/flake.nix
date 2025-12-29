@@ -15,8 +15,7 @@
       gateway = {
         imports = [
           self.nixosModules.default
-          ./caddy.nix
-          ./coturn.nix
+          ./gateway
         ];
         virtualisation.podman.defaultNetwork.settings = {
           network_dns_servers = ["192.168.59.14"];
