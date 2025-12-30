@@ -10,7 +10,6 @@
     usbip.enable = true;
   };
   home-manager = {
-    useGlobalPkgs = true;
     users.bonjour = {
       home.stateVersion = "25.11";
     };

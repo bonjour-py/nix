@@ -1,4 +1,4 @@
-{host, ...}:{
+{host, wsl?null, ...}:{
   nixpkgs.hostPlatform = "x86_64-linux";
   boot = {
     loader = {
