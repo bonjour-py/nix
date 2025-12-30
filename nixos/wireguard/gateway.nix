@@ -1,5 +1,4 @@
 {
-  imports = [ ./default.nix ];
   networking = {
     wireguard.interfaces.wireguard = {
       privateKeyFile = "/etc/wireguard/gateway.private";

@@ -1,4 +1,4 @@
-{
+{host, ...}:{
   virtualisation.podman = {
     enable = true;
     autoPrune.enable = true;
@@ -8,4 +8,5 @@
     };
   };
   networking.firewall.trustedInterfaces = ["podman"];
+  imports = builtins.filter builtins.pathExists [ ./${host} ./${host}.nix ];
 }

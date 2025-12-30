@@ -1,5 +1,4 @@
 {
-  imports = [ ./default.nix ];
   networking.wireguard.interfaces.wireguard = {
     privateKeyFile = "/etc/wireguard/server.private";
     ips = ["192.168.59.254/32"];

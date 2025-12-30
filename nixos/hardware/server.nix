@@ -1,5 +1,4 @@
 {config, ...}:{
-  imports = [ ./default.nix ];
   boot.initrd.availableKernelModules = ["ahci" "ehci_pci" "megaraid_sas" "usb_storage" "usbhid" "sd_mod"];
   hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
   fileSystems = {

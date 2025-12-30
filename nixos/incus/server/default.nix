@@ -1,6 +1,5 @@
 {
   imports = [
-    ../default.nix
     ./bonjour.nix
     ./work.nix
   ];

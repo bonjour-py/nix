@@ -1,5 +1,4 @@
 {
-  imports = [ ./default.nix ];
   systemd.network = {
     enable = true;
     networks."10-eno1" = {

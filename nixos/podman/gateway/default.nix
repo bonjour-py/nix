@@ -1,6 +1,5 @@
 {
   imports = [
-    ../default.nix
     ./caddy.nix
     ./coturn.nix
   ];

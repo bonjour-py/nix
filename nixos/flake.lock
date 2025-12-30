@@ -1,5 +1,16 @@
 {
   "nodes": {
+    "common": {
+      "locked": {
+        "path": "./common",
+        "type": "path"
+      },
+      "original": {
+        "path": "./common",
+        "type": "path"
+      },
+      "parent": []
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -16,43 +27,57 @@
         "type": "github"
       }
     },
-    "home-manager": {
+    "hardware": {
       "inputs": {
-        "nixpkgs": [
-          "nixos",
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1767048910,
-        "narHash": "sha256-KLFTeA/xquN+F3XHLAXcserk0L0nijbhzuldxNDF1eE=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "d99b4ca5debaa082c7d76015aa2b7f3fc7e8b5f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "nixos": {
-      "inputs": {
-        "home-manager": "home-manager",
-        "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-unstable": "nixpkgs-unstable",
         "wsl": "wsl"
       },
       "locked": {
-        "path": "./nixos",
+        "path": "./hardware",
         "type": "path"
       },
       "original": {
-        "path": "./nixos",
+        "path": "./hardware",
         "type": "path"
       },
       "parent": []
+    },
+    "incus": {
+      "locked": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "original": {
+        "path": "./incus",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "network": {
+      "locked": {
+        "path": "./network",
+        "type": "path"
+      },
+      "original": {
+        "path": "./network",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1765472234,
+        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
     },
     "nixpkgs-stable": {
       "locked": {
@@ -88,18 +113,56 @@
         "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
       }
     },
+    "podman": {
+      "locked": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "original": {
+        "path": "./podman",
+        "type": "path"
+      },
+      "parent": []
+    },
     "root": {
       "inputs": {
-        "nixos": "nixos"
+        "common": "common",
+        "hardware": "hardware",
+        "incus": "incus",
+        "network": "network",
+        "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "podman": "podman",
+        "users": "users",
+        "wireguard": "wireguard"
       }
+    },
+    "users": {
+      "locked": {
+        "path": "./users",
+        "type": "path"
+      },
+      "original": {
+        "path": "./users",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "wireguard": {
+      "locked": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "original": {
+        "path": "./wireguard",
+        "type": "path"
+      },
+      "parent": []
     },
     "wsl": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": [
-          "nixos",
-          "nixpkgs-unstable"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1765841014,
@@ -111,6 +174,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "main",
         "repo": "NixOS-WSL",
         "type": "github"
       }

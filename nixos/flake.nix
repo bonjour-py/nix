@@ -2,8 +2,14 @@
   inputs = {
     nixpkgs-stable.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-25.11&shallow=1";
     nixpkgs-unstable.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-unstable&shallow=1";
-    wsl.url = "github:nix-community/NixOS-WSL/main";
-    home-manager.url = "github:nix-community/home-manager";
+    wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
   outputs = {
     self,
@@ -12,34 +18,21 @@
     wsl,
     home-manager,
   }:{
-    nixosConfigurations = {
-      server = nixpkgs-stable.lib.nixosSystem {
-        modules = [
-          ./common/server.nix
-          ./hardware/server.nix
-          ./network/server.nix
-          ./users/server.nix
-          ./wireguard/server.nix
-          ./incus/server
-        ];
+    nixosConfigurations = builtins.mapAttrs 
+      (
+        host: nixpkgs: nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            wsl = wsl.nixosModules.default;
+            home-manager = home-manager.nixosModules.home-manager;
+            inherit host;
+          };
+          modules = [ ./default.nix ];
+        }
+      )
+      {
+        server = nixpkgs-stable;
+        gateway = nixpkgs-stable;
+        laptop = nixpkgs-unstable;
       };
-      gateway = nixpkgs-stable.lib.nixosSystem{
-        modules = [
-          ./common/gateway.nix
-          ./hardware/gateway.nix
-          ./network/gateway.nix
-          ./users/gateway.nix
-          ./wireguard/gateway.nix
-          ./podman/gateway
-        ];
-      };
-      laptop = nixpkgs-unstable.lib.nixosSystem {
-        modules = [
-          ./common/laptop.nix
-          ( import ./hardware/laptop.nix {wsl = wsl.nixosModules.default;} )
-          ( import ./users/laptop.nix {home-manager = home-manager.nixosModules.home-manager;} )
-        ];
-      };
-    };
   };
 }

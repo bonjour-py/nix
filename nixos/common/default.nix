@@ -1,4 +1,4 @@
-{
+{host, ...}:{
   nixpkgs.hostPlatform = "x86_64-linux";
   system.stateVersion = "25.11";
   time.timeZone = "Asia/Shanghai";
@@ -11,4 +11,5 @@
     };
     gc.automatic = true;
   };
+  imports = builtins.filter builtins.pathExists [ ./${host}.nix ];
 }
