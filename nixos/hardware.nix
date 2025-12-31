@@ -1,4 +1,5 @@
-{host, wsl?null, ...}:{
+{
+  system.stateVersion = "25.11";
   nixpkgs.hostPlatform = "x86_64-linux";
   boot = {
     loader = {
@@ -8,5 +9,4 @@
     };
     tmp.useTmpfs = true;
   };
-  imports = builtins.filter builtins.pathExists [ ./${host}.nix ];
 }

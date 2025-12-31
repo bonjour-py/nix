@@ -1,4 +1,4 @@
-{host, pkgs, ...}:{
+{pkgs, ...}:{
   virtualisation.incus = {
     enable = true;
     package = pkgs.incus;
@@ -71,5 +71,4 @@
   };
   security.apparmor.enable = true;
   networking.firewall.allowedTCPPorts = [ 80 443 ];
-  imports = builtins.filter builtins.pathExists [ ./${host} ./${host}.nix ];
 }

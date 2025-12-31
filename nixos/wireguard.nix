@@ -1,4 +1,4 @@
-{host, ...}:{
+{
   systemd.tmpfiles.settings.wireguard."/etc/wireguard" = {
     "0" = {
       type = "C";
@@ -23,5 +23,4 @@
       "192.168.59.252" = ["desktop.bonjour"];
     };
   };
-  imports = builtins.filter builtins.pathExists [ ./${host} ./${host}.nix ];
 }

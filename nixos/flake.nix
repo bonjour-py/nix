@@ -14,25 +14,17 @@
     wsl,
     home-manager,
   }:{
-    lib = rec {
-      hosts = {
-        server.nixpkgs = nixpkgs-stable;
-        gateway.nixpkgs = nixpkgs-stable;
-        laptop = {
-          nixpkgs = nixpkgs-unstable;
-          specialArgs = {
-            wsl = wsl.nixosModules.default;
-            home-manager = home-manager.nixosModules.home-manager;
-            agenix = agenix.nixosModules.default;
-          };
+    nixosConfigurations = {
+      server = nixpkgs-stable.lib.nixosSystem {modules = [./server];};
+      gateway = nixpkgs-stable.lib.nixosSystem {modules = [./gateway];};
+      laptop = nixpkgs-unstable.lib.nixosSystem {
+        modules = [./laptop];
+        specialArgs = {
+          wsl = wsl.nixosModules.default;
+          home-manager = home-manager.nixosModules.home-manager;
+          agenix = agenix.nixosModules.default;
         };
       };
-      mkHost = host: { nixpkgs, specialArgs?{} }: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit host; } // specialArgs;
-        modules = [ ./default.nix ];
-      };
-      nixosConfigurations = builtins.mapAttrs mkHost hosts;
     };
-    nixosConfigurations = self.lib.nixosConfigurations
   };
 }
