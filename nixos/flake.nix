@@ -14,14 +14,8 @@
     wsl,
     home-manager,
   }:{
-    nixosConfigurations = builtins.mapAttrs 
-      (
-        host: { nixpkgs, specialArgs?{} }: nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit host; } // specialArgs;
-          modules = [ ./default.nix ];
-        }
-      )
-      {
+    lib = rec {
+      hosts = {
         server.nixpkgs = nixpkgs-stable;
         gateway.nixpkgs = nixpkgs-stable;
         laptop = {
@@ -33,5 +27,12 @@
           };
         };
       };
+      mkHost = host: { nixpkgs, specialArgs?{} }: nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit host; } // specialArgs;
+        modules = [ ./default.nix ];
+      };
+      nixosConfigurations = builtins.mapAttrs mkHost hosts;
+    };
+    nixosConfigurations = self.lib.nixosConfigurations
   };
 }

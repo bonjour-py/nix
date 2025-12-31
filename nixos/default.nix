@@ -18,7 +18,7 @@
     ];
     laptop = [
       ./common
-      ./wsl
+      ./wsl.nix
     ];
   }.${host};
 }
