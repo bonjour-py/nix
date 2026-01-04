@@ -1,30 +1,24 @@
 {
   inputs = {
-    nixpkgs-stable.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-25.11&shallow=1";
-    nixpkgs-unstable.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-unstable&shallow=1";
-    agenix.url = "github:ryantm/agenix";
-    wsl.url = "github:nix-community/NixOS-WSL";
-    home-manager.url = "github:nix-community/home-manager";
+    default.url = "./default";
+    server = {
+      url = "./server";
+      inputs.default.follows = "default";
+    };
+    gateway = {
+      url = "./gateway";
+      inputs.default.follows = "default";
+    };
+    laptop = {
+      url = "./laptop";
+      inputs.default.follows = "default";
+    };
   };
-  outputs = {
-    self,
-    nixpkgs-stable,
-    nixpkgs-unstable,
-    agenix,
-    wsl,
-    home-manager,
-  }:{
+  outputs = {self, server, gateway, laptop, ...}:{
     nixosConfigurations = {
-      server = nixpkgs-stable.lib.nixosSystem {modules = [./server];};
-      gateway = nixpkgs-stable.lib.nixosSystem {modules = [./gateway];};
-      laptop = nixpkgs-unstable.lib.nixosSystem {
-        modules = [./laptop];
-        specialArgs = {
-          wsl = wsl.nixosModules.default;
-          home-manager = home-manager.nixosModules.home-manager;
-          agenix = agenix.nixosModules.default;
-        };
-      };
+      server = server.nixosConfigurations.server;
+      gateway = gateway.nixosConfigurations.gateway;
+      laptop = laptop.nixosConfigurations.laptop;
     };
   };
 }
