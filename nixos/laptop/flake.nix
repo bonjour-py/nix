@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-unstable&shallow=1";
+    default.url = "../default";
     wsl.url = "github:nix-community/NixOS-WSL";
     home-manager.url = "github:nix-community/home-manager";
     agenix.url = "github:ryantm/agenix";

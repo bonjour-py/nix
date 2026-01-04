@@ -47,15 +47,44 @@
     },
     "default": {
       "locked": {
-        "path": "./default",
+        "path": "../default",
         "type": "path"
       },
       "original": {
-        "path": "./default",
+        "path": "../default",
         "type": "path"
       },
       "parent": [
-        "nixos"
+        "nixos",
+        "gateway"
+      ]
+    },
+    "default_2": {
+      "locked": {
+        "path": "../default",
+        "type": "path"
+      },
+      "original": {
+        "path": "../default",
+        "type": "path"
+      },
+      "parent": [
+        "nixos",
+        "laptop"
+      ]
+    },
+    "default_3": {
+      "locked": {
+        "path": "../default",
+        "type": "path"
+      },
+      "original": {
+        "path": "../default",
+        "type": "path"
+      },
+      "parent": [
+        "nixos",
+        "server"
       ]
     },
     "flake-compat": {
@@ -76,10 +105,7 @@
     },
     "gateway": {
       "inputs": {
-        "default": [
-          "nixos",
-          "default"
-        ],
+        "default": "default",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
@@ -138,10 +164,7 @@
     "laptop": {
       "inputs": {
         "agenix": "agenix",
-        "default": [
-          "nixos",
-          "default"
-        ],
+        "default": "default_2",
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_4",
         "wsl": "wsl"
@@ -160,7 +183,6 @@
     },
     "nixos": {
       "inputs": {
-        "default": "default",
         "gateway": "gateway",
         "laptop": "laptop",
         "server": "server"
@@ -281,10 +303,7 @@
     },
     "server": {
       "inputs": {
-        "default": [
-          "nixos",
-          "default"
-        ],
+        "default": "default_3",
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {

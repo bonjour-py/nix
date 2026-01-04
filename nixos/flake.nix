@@ -1,18 +1,8 @@
 {
   inputs = {
-    default.url = "./default";
-    server = {
-      url = "./server";
-      inputs.default.follows = "default";
-    };
-    gateway = {
-      url = "./gateway";
-      inputs.default.follows = "default";
-    };
-    laptop = {
-      url = "./laptop";
-      inputs.default.follows = "default";
-    };
+    server.url = "./server";
+    gateway.url = "./gateway";
+    laptop.url = "./laptop";
   };
   outputs = {self, server, gateway, laptop, ...}:{
     nixosConfigurations = {

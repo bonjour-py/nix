@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-25.11&shallow=1";
+    default.url = "../default";
   };
   outputs = {self, nixpkgs, default, ...}:{
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
