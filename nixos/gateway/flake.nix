@@ -1,18 +1,17 @@
 {
   inputs = {
     nixpkgs.url = "git+https://mirrors.cernet.edu.cn/nixpkgs.git?ref=nixos-25.11&shallow=1";
-    default.url = "../default";
   };
-  outputs = {self, nixpkgs, default, ...}:{
+  outputs = {self, nixpkgs, ...}:{
     nixosConfigurations.gateway = nixpkgs.lib.nixosSystem {
       modules = [
-        default.nixosModules.hardware
-        default.nixosModules.location
-        default.nixosModules.nix
-        default.nixosModules.network
-        default.nixosModules.users
-        default.nixosModules.wireguard
-        default.nixosModules.podman
+        ../default/hardware.nix
+        ../default/location.nix
+        ../default/nix.nix
+        ../default/network.nix
+        ../default/users.nix
+        ../default/wireguard.nix
+        ../default/podman.nix
         ./hardware.nix
         ./hostname.nix
         ./wireguard.nix
