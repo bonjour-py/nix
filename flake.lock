@@ -4,7 +4,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "systems": "systems"
       },
       "locked": {
@@ -25,7 +25,6 @@
       "inputs": {
         "nixpkgs": [
           "nixos",
-          "laptop",
           "agenix",
           "nixpkgs"
         ]
@@ -45,48 +44,6 @@
         "type": "github"
       }
     },
-    "default": {
-      "locked": {
-        "path": "../default",
-        "type": "path"
-      },
-      "original": {
-        "path": "../default",
-        "type": "path"
-      },
-      "parent": [
-        "nixos",
-        "gateway"
-      ]
-    },
-    "default_2": {
-      "locked": {
-        "path": "../default",
-        "type": "path"
-      },
-      "original": {
-        "path": "../default",
-        "type": "path"
-      },
-      "parent": [
-        "nixos",
-        "laptop"
-      ]
-    },
-    "default_3": {
-      "locked": {
-        "path": "../default",
-        "type": "path"
-      },
-      "original": {
-        "path": "../default",
-        "type": "path"
-      },
-      "parent": [
-        "nixos",
-        "server"
-      ]
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -103,28 +60,10 @@
         "type": "github"
       }
     },
-    "gateway": {
-      "inputs": {
-        "default": "default",
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "path": "./gateway",
-        "type": "path"
-      },
-      "original": {
-        "path": "./gateway",
-        "type": "path"
-      },
-      "parent": [
-        "nixos"
-      ]
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
           "nixos",
-          "laptop",
           "agenix",
           "nixpkgs"
         ]
@@ -145,14 +84,14 @@
     },
     "home-manager_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1767515539,
-        "narHash": "sha256-4fHDswBZac5vE8WA9qczUgPo3TvJVF9uOvcXhPpnqJ0=",
+        "lastModified": 1767688629,
+        "narHash": "sha256-kX1BVq5zoowePHssEjmpc6FNT3vVZNZaCXd7mfvCsxg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "12cc14271b250b2b46bf681352da91a8d2efec26",
+        "rev": "bfaba198af72338b8dbda59887859d7a30c6643c",
         "type": "github"
       },
       "original": {
@@ -161,92 +100,7 @@
         "type": "github"
       }
     },
-    "laptop": {
-      "inputs": {
-        "agenix": "agenix",
-        "default": "default_2",
-        "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_4",
-        "wsl": "wsl"
-      },
-      "locked": {
-        "path": "./laptop",
-        "type": "path"
-      },
-      "original": {
-        "path": "./laptop",
-        "type": "path"
-      },
-      "parent": [
-        "nixos"
-      ]
-    },
-    "nixos": {
-      "inputs": {
-        "gateway": "gateway",
-        "laptop": "laptop",
-        "server": "server"
-      },
-      "locked": {
-        "path": "./nixos",
-        "type": "path"
-      },
-      "original": {
-        "path": "./nixos",
-        "type": "path"
-      },
-      "parent": []
-    },
-    "nixpkgs": {
-      "locked": {
-        "lastModified": 1767325753,
-        "narHash": "sha256-yA/CuWyqm+AQo2ivGy6PlYrjZBQm7jfbe461+4HF2fo=",
-        "ref": "nixos-25.11",
-        "rev": "64049ca74d63e971b627b5f3178d95642e61cedd",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
-      },
-      "original": {
-        "ref": "nixos-25.11",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1754028485,
-        "narHash": "sha256-IiiXB3BDTi6UqzAZcf2S797hWEPCRZOwyNThJIYhUfk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "59e69648d345d6e8fef86158c555730fa12af9de",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1766902085,
-        "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c0b0e0fddf73fd517c3471e546c0df87a42d53f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
+    "latest": {
       "locked": {
         "lastModified": 1767379071,
         "narHash": "sha256-EgE0pxsrW9jp9YFMkHL9JMXxcqi/OoumPJYwf+Okucw=",
@@ -263,7 +117,57 @@
         "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
       }
     },
-    "nixpkgs_5": {
+    "nixos": {
+      "inputs": {
+        "agenix": "agenix",
+        "home-manager": "home-manager_2",
+        "latest": "latest",
+        "stable": "stable",
+        "wsl": "wsl"
+      },
+      "locked": {
+        "path": "./nixos",
+        "type": "path"
+      },
+      "original": {
+        "path": "./nixos",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1754028485,
+        "narHash": "sha256-IiiXB3BDTi6UqzAZcf2S797hWEPCRZOwyNThJIYhUfk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "59e69648d345d6e8fef86158c555730fa12af9de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1766902085,
+        "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c0b0e0fddf73fd517c3471e546c0df87a42d53f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1765472234,
         "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
@@ -279,44 +183,27 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
-      "locked": {
-        "lastModified": 1767325753,
-        "narHash": "sha256-yA/CuWyqm+AQo2ivGy6PlYrjZBQm7jfbe461+4HF2fo=",
-        "ref": "nixos-25.11",
-        "rev": "64049ca74d63e971b627b5f3178d95642e61cedd",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
-      },
-      "original": {
-        "ref": "nixos-25.11",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
-      }
-    },
     "root": {
       "inputs": {
         "nixos": "nixos"
       }
     },
-    "server": {
-      "inputs": {
-        "default": "default_3",
-        "nixpkgs": "nixpkgs_6"
-      },
+    "stable": {
       "locked": {
-        "path": "./server",
-        "type": "path"
+        "lastModified": 1767480499,
+        "narHash": "sha256-8IQQUorUGiSmFaPnLSo2+T+rjHtiNWc+OAzeHck7N48=",
+        "ref": "nixos-25.11",
+        "rev": "30a3c519afcf3f99e2c6df3b359aec5692054d92",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
       },
       "original": {
-        "path": "./server",
-        "type": "path"
-      },
-      "parent": [
-        "nixos"
-      ]
+        "ref": "nixos-25.11",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+      }
     },
     "systems": {
       "locked": {
@@ -336,7 +223,7 @@
     "wsl": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1765841014,
