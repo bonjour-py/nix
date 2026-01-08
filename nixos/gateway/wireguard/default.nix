@@ -38,7 +38,6 @@
           allowedIPs = ["192.168.59.251/32"];
         }
         {
-          name = "desktop";
           publicKey = "IMg+/XWKx2VVGzzoVN0Chtka5ZD6USwk6UnPL5I5SQM=";
           presharedKeyFile = config.age.secrets."gateway-desktop.preshared".path;
           allowedIPs = ["192.168.59.252/32"];
