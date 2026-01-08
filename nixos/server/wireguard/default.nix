@@ -1,12 +1,12 @@
 {config, ...}:{
   age.secrets = {
     "server.private" = {
-      file = "./server.private.age";
+      file = ./server.private.age;
       group = "systemd-network";
       mode = "640";
     };
     "gateway-server.preshared" = {
-      file = "./gateway-server.preshared.age";
+      file = ./gateway-server.preshared.age;
       group = "systemd-network";
       mode = "640";
     };

@@ -1,5 +1,5 @@
 {config, ...}:{
-  age.secrets."turnserver.conf".file = "./turnserver.conf.age";
+  age.secrets."turnserver.conf".file = ./turnserver.conf.age;
   virtualisation.oci-containers.containers.coturn = {
     image = "ghcr.io/coturn/coturn:alpine";
     pull = "newer";

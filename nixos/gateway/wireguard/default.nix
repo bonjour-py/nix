@@ -1,22 +1,22 @@
 {config, ...}:{
   age.secrets = {
     "gateway.private" = {
-      file = "./gateway.private.age";
+      file = ./gateway.private.age;
       group = "systemd-network";
       mode = "640";
     };
     "gateway-server.preshared" = {
-      file = "./gateway-server.preshared.age";
+      file = ./gateway-server.preshared.age;
       group = "systemd-network";
       mode = "640";
     };
     "gateway-desktop.preshared" = {
-      file = "./gateway-desktop.preshared.age";
+      file = ./gateway-desktop.preshared.age;
       group = "systemd-network";
       mode = "640";
     };
     "gateway-laptop.preshared" = {
-      file = "./gateway-laptop.preshared.age";
+      file = ./gateway-laptop.preshared.age;
       group = "systemd-network";
       mode = "640";
     };
