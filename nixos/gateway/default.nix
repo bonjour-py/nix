@@ -9,7 +9,7 @@
     ../default/podman.nix
     ./hardware.nix
     ./hostname.nix
-    ./wireguard.nix
+    ./wireguard
     ./podman
   ];
 }

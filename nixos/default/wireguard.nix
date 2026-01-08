@@ -1,19 +1,4 @@
 {
-  systemd.tmpfiles.settings.wireguard."/etc/wireguard" = {
-    "0" = {
-      type = "C";
-      argument = "%h/wireguard";
-    };
-    "1" = {
-      type = "Z";
-      group = "systemd-network";
-      mode = "0640";
-    };
-    "2" = {
-      type = "z";
-      mode = "0755";
-    };
-  };
   networking = {
     firewall.trustedInterfaces = ["wireguard"];
     hosts = {

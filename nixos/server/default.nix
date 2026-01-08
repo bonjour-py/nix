@@ -10,7 +10,7 @@
     ./hardware.nix
     ./network.nix
     ./hostname.nix
-    ./wireguard.nix
+    ./wireguard
     ./incus
   ];
 }
