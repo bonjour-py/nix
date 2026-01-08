@@ -7,4 +7,5 @@
     useWindowsDriver = true;
     usbip.enable = true;
   };
+  services.openssh.generateHostKeys = true;
 }
