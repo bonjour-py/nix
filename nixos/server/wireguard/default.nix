@@ -1,23 +1,23 @@
 {config, ...}:{
   age.secrets = {
-    "server.private" = {
+    "wireguard/server.private" = {
       file = ./server.private.age;
       group = "systemd-network";
       mode = "640";
     };
-    "gateway-server.preshared" = {
+    "wireguard/gateway-server.preshared" = {
       file = ./gateway-server.preshared.age;
       group = "systemd-network";
       mode = "640";
     };
   };
   networking.wireguard.interfaces.wireguard = {
-    privateKeyFile = config.age.secrets."server.private".path;
+    privateKeyFile = config.age.secrets."wireguard/server.private".path;
     ips = ["192.168.59.254/32"];
     peers = [
       {
         publicKey = "IVgZMl95LtD/UzhGWZZDV6gGdBnnFFvhJafXGkCXuk0=";
-        presharedKeyFile = config.age.secrets."gateway-server.preshared".path;
+        presharedKeyFile = config.age.secrets."wireguard/gateway-server.preshared".path;
         endpoint = "gateway.bonjour.zone:51820";
         persistentKeepalive = 25;
         allowedIPs = [

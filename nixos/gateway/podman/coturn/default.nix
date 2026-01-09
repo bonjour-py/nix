@@ -1,10 +1,10 @@
 {config, ...}:{
-  age.secrets."turnserver.conf".file = ./turnserver.conf.age;
+  age.secrets."podman/coturn/turnserver.conf".file = ./turnserver.conf.age;
   virtualisation.oci-containers.containers.coturn = {
     image = "ghcr.io/coturn/coturn:alpine";
     pull = "newer";
     volumes = [
-      "${config.age.secrets."turnserver.conf".path}:/etc/coturn/turnserver.conf:ro"
+      "${config.age.secrets."podman/coturn/turnserver.conf".path}:/etc/coturn/turnserver.conf:ro"
       "/root/coturn/cert.pem:/turn_server_cert.pem:ro"
       "/root/coturn/pkey.pem:/turn_server_pkey.pem:ro"
     ];
