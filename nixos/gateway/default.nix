@@ -5,6 +5,7 @@
     ../default/nix.nix
     ../default/network.nix
     ../default/users.nix
+    ../default/ssh.nix
     ../default/wireguard.nix
     ../default/podman.nix
     ./hardware.nix

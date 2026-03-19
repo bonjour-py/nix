@@ -5,7 +5,6 @@
     wsl.url = "github:nix-community/NixOS-WSL";
     home-manager.url = "github:nix-community/home-manager";
     agenix.url = "github:ryantm/agenix";
-    flatpak.url = "github:gmodena/nix-flatpak/latest";
   };
   outputs = {self, stable, latest, wsl, home-manager, agenix, flatpak, ...}:{
     nixosConfigurations = {
@@ -25,8 +24,6 @@
         modules = [
           wsl.nixosModules.default
           agenix.nixosModules.default
-          home-manager.nixosModules.home-manager
-          flatpak.nixosModules.nix-flatpak
           ./laptop
         ];
       };
