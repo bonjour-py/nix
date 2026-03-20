@@ -6,7 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
     agenix.url = "github:ryantm/agenix";
   };
-  outputs = {self, stable, latest, wsl, home-manager, agenix, flatpak, ...}:{
+  outputs = {self, stable, latest, wsl, home-manager, agenix, ...}:{
     nixosConfigurations = {
       server = stable.lib.nixosSystem {
         modules = [
