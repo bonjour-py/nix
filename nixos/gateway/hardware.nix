@@ -11,5 +11,5 @@
       fsType = "ext4";
     };
   };
-  swapDevices = [{device = "UUID=26c12c19-1373-4697-b6a6-9428e7039509";}];
+  swapDevices = [{device = "/dev/disk/by-uuid/26c12c19-1373-4697-b6a6-9428e7039509";}];
 }
