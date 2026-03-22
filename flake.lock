@@ -44,22 +44,6 @@
         "type": "github"
       }
     },
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767039857,
-        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -82,48 +66,27 @@
         "type": "github"
       }
     },
-    "home-manager_2": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1773962693,
-        "narHash": "sha256-nf9pgktDE4E2TCavUT1vh3Nd/tfKixL1BK6P32Zp3hI=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "9d3c1d636e7b8ab10f357cd9bee653cd400437de",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "latest": {
       "locked": {
         "lastModified": 1773821835,
         "narHash": "sha256-TJ3lSQtW0E2JrznGVm8hOQGVpXjJyXY2guAxku2O9A4=",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "repo": "nixpkgs",
         "rev": "b40629efe5d6ec48dd1efba650c797ddbd39ace0",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+        "type": "github"
       },
       "original": {
+        "owner": "nixos",
         "ref": "nixos-unstable",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixos": {
       "inputs": {
         "agenix": "agenix",
-        "home-manager": "home-manager_2",
         "latest": "latest",
-        "stable": "stable",
-        "wsl": "wsl"
+        "stable": "stable"
       },
       "locked": {
         "path": "./nixos",
@@ -151,38 +114,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1773821835,
-        "narHash": "sha256-TJ3lSQtW0E2JrznGVm8hOQGVpXjJyXY2guAxku2O9A4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b40629efe5d6ec48dd1efba650c797ddbd39ace0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1773734432,
-        "narHash": "sha256-IF5ppUWh6gHGHYDbtVUyhwy/i7D261P7fWD1bPefOsw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "cda48547b432e8d3b18b4180ba07473762ec8558",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "nixos": "nixos"
@@ -192,17 +123,16 @@
       "locked": {
         "lastModified": 1773814637,
         "narHash": "sha256-GNU+ooRmrHLfjlMsKdn0prEKVa0faVanm0jrgu1J/gY=",
-        "ref": "nixos-25.11",
+        "owner": "nixos",
+        "repo": "nixpkgs",
         "rev": "fea3b367d61c1a6592bc47c72f40a9f3e6a53e96",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+        "type": "github"
       },
       "original": {
+        "owner": "nixos",
         "ref": "nixos-25.11",
-        "shallow": true,
-        "type": "git",
-        "url": "https://mirrors.cernet.edu.cn/nixpkgs.git"
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "systems": {
@@ -217,25 +147,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "wsl": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1773882647,
-        "narHash": "sha256-VzcOcE0LLpEnyoxLuMuptZ9ZWCkSBn99bTgEQoz5Viw=",
-        "owner": "nix-community",
-        "repo": "NixOS-WSL",
-        "rev": "fd0eae98d1ecee31024271f8d64676250a386ee7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NixOS-WSL",
         "type": "github"
       }
     }
