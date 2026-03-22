@@ -1,4 +1,5 @@
 {config, ...}:{
+  imports = [ ./users.nix ];
   age.secrets = {
     "wireguard/gateway.private" = {
       file = ./gateway.private.age;
