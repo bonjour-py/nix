@@ -3,6 +3,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
   hardware.enableAllFirmware = true;
+  nixpkgs.config.allowUnfree = true;
   fileSystems = {
     "/boot" = {
       device = "UUID=12CE-A600";

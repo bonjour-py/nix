@@ -1,19 +1,9 @@
 {pkgs, ...}:{
-  nixpkgs.config.allowUnfree = true;
-  i18n.inputMethod = {
-    enable = true;
-    type = "ibus";
-    ibus = {
-      waylandFrontend = true;
-      engines = [ pkgs.ibus-engines.pinyin ];
-    };
-  };
-  fonts.enableDefaultPackages = true;
   services = {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    gnome.gcr-ssh-agent.enable = false;
     fprintd.enable = true;
-    flatpak.enable = true;
   };
   environment.gnome.excludePackages = with pkgs;[
     gnome-tour
@@ -40,5 +30,13 @@
     snapshot
     gnome-connections
   ];
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+    ibus = {
+      waylandFrontend = true;
+      engines = [ pkgs.ibus-engines.pinyin ];
+    };
+  };
   users.users.bonjour.extraGroups = ["networkmanager"];
 }
