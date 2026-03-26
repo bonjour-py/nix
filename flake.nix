@@ -2,9 +2,7 @@
   description = "bonjour";
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
-    substituters = [
-      "https://mirrors.cernet.edu.cn/nix-channels/store"
-    ];
+    substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   };
   inputs = {
     nixos.url = "./nixos";
