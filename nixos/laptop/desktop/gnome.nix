@@ -35,6 +35,7 @@
       appindicator
       dash-to-dock
       gtk4-desktop-icons-ng-ding
+      user-themes
       system-monitor-next
     ];
   };
