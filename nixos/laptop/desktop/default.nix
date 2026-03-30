@@ -1,6 +1,6 @@
 {
   imports = [
     ./gnome.nix
-    ./application
+    ./application.nix
   ];
 }
