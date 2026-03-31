@@ -1,6 +1,9 @@
 {
-  outputs = {self, latest, agenix, home-manager, ...}:{
-    homeConfigurations.bonjour = home-manager.lib.homeManagerConfiguration {
+  inputs = {
+    latest.url = "github:nix-community/home-manager";
+  };
+  outputs = {self, latest, ...}:{
+    homeConfigurations.bonjour = latest.lib.homeManagerConfiguration {
       modules = [
       ];
     };

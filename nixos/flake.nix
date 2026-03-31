@@ -1,4 +1,9 @@
 {
+  inputs = {
+    stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    agenix.url = "github:ryantm/agenix";
+  };
   outputs = {self, stable, latest, agenix, ...}:{
     nixosConfigurations = {
       server = stable.lib.nixosSystem {
