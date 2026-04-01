@@ -5,7 +5,6 @@
     gnome = {
       core-apps.enable = false;
       gcr-ssh-agent.enable = false;
-      gnome-software.enable = true;
     };
     fprintd.enable = true;
   };
