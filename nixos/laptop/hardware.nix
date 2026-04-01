@@ -1,6 +1,8 @@
 {config, ...}:{
-  boot.initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" "usbhid" "uas" "sd_mod" ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot = {
+    initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" "usbhid" "uas" "sd_mod" ];
+    kernelModules = [ "kvm-amd" ];
+  };
   hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;

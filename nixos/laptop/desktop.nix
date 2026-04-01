@@ -5,8 +5,11 @@
     gnome = {
       core-apps.enable = false;
       gcr-ssh-agent.enable = false;
+      gnome-software.enable = true;
     };
+    fwupd.enable = true;
     fprintd.enable = true;
+    flatpak.enable = true;
   };
   environment.systemPackages = (
     with pkgs;[
@@ -40,5 +43,4 @@
     ];
   };
   users.users.bonjour.extraGroups = ["networkmanager"];
-  services.flatpak.enable = true;
 }
