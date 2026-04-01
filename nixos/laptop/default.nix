@@ -6,6 +6,6 @@
     ../default/users.nix
     ./hardware.nix
     ./hostname.nix
-    ./desktop
+    ./desktop.nix
   ];
 }
