@@ -1,5 +1,16 @@
 {
   virtualisation.incus.preseed = {
+    networks = [
+      {
+        project = "default";
+        name = "incusmacv";
+        type = "macvlan";
+        description = "";
+        config = {
+          parent = "eno1";
+        };
+      }
+    ];
     projects = [
       {
         name = "work";
