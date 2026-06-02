@@ -51,5 +51,5 @@
     dns = ["192.168.59.254"];
     domains = ["bonjour" "~server.bonjour"];
   };
-  services.resolved.extraConfig = "DNSStubListenerExtra = 192.168.59.255";
+  services.resolved.settings.Resolve.DNSStubListenerExtra = "192.168.59.255";
 }
