@@ -11,6 +11,7 @@
   };
   fileSystems."/var/lib/incus" = {
     device = "UUID=297e0847-bab9-4d30-90e0-6163e404ebcf";
+    fsType = "btrfs";
     options = [ "subvol=@incus" "compress=zstd" ];
   };
   systemd.network.networks."10-incusbr-bonjour" = {
