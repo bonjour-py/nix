@@ -33,5 +33,5 @@
     dns = ["192.168.59.255"];
     domains = ["bonjour" "~gateway.bonjour" "~oss-cn-beijing-internal.aliyuncs.com"];
   };
-  services.resolved.extraConfig = "DNSStubListenerExtra = 192.168.59.254";
+  services.resolved.settings.Resolve.DNSStubListenerExtra = "192.168.59.254";
 }
