@@ -20,18 +20,18 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            swap = {
-              size = "1G";
-              content = {
-                type = "filesystem";
-              };
-            };
             root = {
-              size = "100%";
+              end = "-2G";
               content = {
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+              };
+            };
+            swap = {
+              size = "100%";
+              content = {
+                type = "swap";
               };
             };
           };
