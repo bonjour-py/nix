@@ -35,6 +35,7 @@
   swapDevices = [
     {
       device = "/.swapfile";
+      randomEncryption.enable = true;
       size = 16*1024;
     }
   ];
