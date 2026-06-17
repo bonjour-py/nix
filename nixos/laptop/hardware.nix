@@ -8,22 +8,22 @@
   nixpkgs.config.allowUnfree = true;
   fileSystems = {
     "/boot" = {
-      device = "UUID=90F9-D672";
-      fsType = "fat32";
+      device = "UUID=23B1-5D54";
+      fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
     "/" = {
-      device = "UUID=8c614334-db09-407b-92db-baf04a74ec54";
+      device = "UUID=bf01ebe2-3471-49b6-9999-e150fd85a72e";
       fsType = "btrfs";
       options = [ "subvol=@rootfs" "compress=zstd" ];
     };
     "/home" = {
-      device = "UUID=8c614334-db09-407b-92db-baf04a74ec54";
+      device = "UUID=bf01ebe2-3471-49b6-9999-e150fd85a72e";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" ];
     };
     "/nix" = {
-      device = "UUID=8c614334-db09-407b-92db-baf04a74ec54";
+      device = "UUID=bf01ebe2-3471-49b6-9999-e150fd85a72e";
       fsType = "btrfs";
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
