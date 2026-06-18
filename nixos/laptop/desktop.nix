@@ -24,6 +24,7 @@
       gtk4-desktop-icons-ng-ding
       user-themes
       system-monitor-next
+      window-is-ready-remover
     ]
   );
   i18n.inputMethod = {
