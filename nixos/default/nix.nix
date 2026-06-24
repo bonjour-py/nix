@@ -1,9 +1,6 @@
 {
   nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
-    };
+    settings.experimental-features = [ "nix-command" "flakes" ];
     gc.automatic = true;
   };
 }

@@ -1,5 +1,6 @@
-{config, ...}:{
+{config, pkgs, ...}:{
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" "usbhid" "uas" "sd_mod" ];
     kernelModules = [ "kvm-amd" ];
   };
