@@ -1,7 +1,6 @@
 {
   imports = [
     ./caddy.nix
-    ./coturn
   ];
   virtualisation.podman.defaultNetwork.settings = {
     network_dns_servers = ["192.168.59.14"];

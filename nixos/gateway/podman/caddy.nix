@@ -11,7 +11,6 @@
       	email bot@bonjour.zone
       }
       bonjour.zone {
-      	redir /.well-known/matrix/* https://chat.bonjour.zone{uri}
       	redir https://www.bonjour.zone{uri}
       }
       www.bonjour.zone {
@@ -28,9 +27,6 @@
       }
       files.bonjour.zone {
       	reverse_proxy http://files.server.bonjour:9200
-      }
-      chat.bonjour.zone {
-      	reverse_proxy http://chat.server.bonjour
       }
       http://*.oss-cn-beijing-internal.aliyuncs.com {
       	@local {
@@ -70,6 +66,5 @@
   networking.hosts."192.168.59.255" = [
     "bonjour-vault.oss-cn-beijing-internal.aliyuncs.com"
     "bonjour-files.oss-cn-beijing-internal.aliyuncs.com"
-    "bonjour-chat.oss-cn-beijing-internal.aliyuncs.com"
   ];
 }
