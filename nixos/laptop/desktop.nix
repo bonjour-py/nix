@@ -5,28 +5,42 @@
     gnome = {
       core-apps.enable = false;
       gcr-ssh-agent.enable = false;
-      gnome-software.enable = true;
     };
     fwupd.enable = true;
     fprintd.enable = true;
-    flatpak.enable = true;
   };
-  environment.systemPackages = (
-    with pkgs;[
-      gnome-console
-      nautilus
-      gnome-system-monitor
-    ]
-  ) ++ (
-    with pkgs.gnomeExtensions;[
-      appindicator
-      dash-to-dock
-      gtk4-desktop-icons-ng-ding
-      user-themes
-      system-monitor-next
-      window-is-ready-remover
-    ]
-  );
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: [
+        pkgs.git
+        pkgs.libva
+        pkgs.ffmpeg
+        pkgs.libepoxy
+      ];
+    };
+  };
+  environment.systemPackages = with pkgs;[
+    gnome-console
+    nautilus
+    gnome-system-monitor
+    refine
+    showtime
+    baobab
+    gnome-weather
+    gnome-firmware
+    gnome-logs
+    dconf-editor
+    gnome-extension-manager
+    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.gtk4-desktop-icons-ng-ding
+    gnomeExtensions.user-themes
+    gnomeExtensions.system-monitor-next
+    gnomeExtensions.window-is-ready-remover
+    pinit
+  ];
   i18n.inputMethod = {
     enable = true;
     type = "ibus";

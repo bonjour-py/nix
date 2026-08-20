@@ -1,13 +1,12 @@
 {
   inputs = {
     latest.url = "github:nix-community/home-manager";
-    flatpak.url = "github:gmodena/nix-flatpak/latest";
   };
-  outputs = {self, latest, flatpak, ...}:{
+  outputs = {self, latest, ...}:{
     homeConfigurations.bonjour = latest.lib.homeManagerConfiguration {
       modules = [
-        flatpak.homeManagerModules.nix-flatpak
-        ./flatpak.nix
+        ./apps.nix
+        ./git.nix
       ];
     };
   };
