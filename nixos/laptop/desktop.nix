@@ -9,6 +9,17 @@
     fwupd.enable = true;
     fprintd.enable = true;
   };
+  environment.systemPackages = [ pkgs.gnome-console pkgs.nautilus ];
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+    ibus = {
+      waylandFrontend = true;
+      engines = [ pkgs.ibus-engines.libpinyin ];
+    };
+  };
+  fonts.enableDefaultPackages = true;
+  users.users.bonjour.extraGroups = ["networkmanager"];
   programs.appimage = {
     enable = true;
     binfmt = true;
@@ -21,34 +32,4 @@
       ];
     };
   };
-  environment.systemPackages = with pkgs;[
-    gnome-console
-    nautilus
-    gnome-system-monitor
-    refine
-    showtime
-    baobab
-    gnome-weather
-    gnome-firmware
-    gnome-logs
-    dconf-editor
-    gnome-extension-manager
-    gnomeExtensions.appindicator
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.gtk4-desktop-icons-ng-ding
-    gnomeExtensions.user-themes
-    gnomeExtensions.system-monitor-next
-    gnomeExtensions.window-is-ready-remover
-    pinit
-  ];
-  i18n.inputMethod = {
-    enable = true;
-    type = "ibus";
-    ibus = {
-      waylandFrontend = true;
-      engines = [ pkgs.ibus-engines.libpinyin ];
-    };
-  };
-  fonts.enableDefaultPackages = true;
-  users.users.bonjour.extraGroups = ["networkmanager"];
 }

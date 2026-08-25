@@ -10,11 +10,9 @@
   };
   inputs = {
     nixos.url = "./nixos";
-    home.url = "./home";
   };
 
-  outputs = {self, nixos, home, ...}:{
+  outputs = {self, nixos, ...}:{
     nixosConfigurations = nixos.nixosConfigurations;
-    homeConfigurations = nixos.homeConfigurations;
   };
 }
