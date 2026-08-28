@@ -9,10 +9,26 @@
     ];
   };
   inputs = {
-    nixos.url = "./nixos";
+    latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixos = {
+      url = "./nixos";
+      inputs = {
+        latest.follows = "latest";
+        stable.follows = "stable";
+      };
+    };
+    profile = {
+      url = "./profile";
+      inputs = {
+        latest.follows = "latest";
+        stable.follows = "stable";
+      };
+    };
   };
 
-  outputs = {self, nixos, ...}:{
+  outputs = {self, nixos, profile, ...}:{
     nixosConfigurations = nixos.nixosConfigurations;
+    packages = profile.packages;
   };
 }
