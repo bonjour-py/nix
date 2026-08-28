@@ -1,5 +1,5 @@
-{
-  programs.git.settings = {
+{lib, writeTextDir}: writeTextDir "home/config/git/config" (
+  lib.generators.toGitINI {
     init.defaultBranch = "main";
     user = {
       name = "bonjour";
@@ -10,5 +10,5 @@
       format = "ssh";
       ssh.defaultKeyCommand = "ssh-add -L";
     };
-  };
-}
+  }
+)

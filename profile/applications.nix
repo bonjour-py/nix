@@ -1,4 +1,4 @@
-{pkgs}: pkgs.buildEnv {
+{pkgs, buildEnv}: buildEnv {
   name = "apps";
   paths = with pkgs;[
     remmina

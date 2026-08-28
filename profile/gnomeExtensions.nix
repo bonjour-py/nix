@@ -1,4 +1,4 @@
-{pkgs}: pkgs.buildEnv {
+{pkgs, buildEnv}: buildEnv {
   name = "gnomeExtensions";
   paths = with pkgs.gnomeExtensions;[
     dash-to-dock

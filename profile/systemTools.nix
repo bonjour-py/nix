@@ -1,0 +1,20 @@
+{pkgs, fallbacks, buildEnv}: buildEnv {
+  name = "system";
+  paths = (
+    with pkgs;[
+      gnome-system-monitor
+      refine
+      showtime
+      baobab
+      gnome-weather
+      gnome-firmware
+      gnome-logs
+      dconf-editor
+      pinit
+    ]
+  ) ++ (
+    with fallbacks;[
+      gearlever
+    ]
+  );
+}

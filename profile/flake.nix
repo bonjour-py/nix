@@ -7,10 +7,9 @@
     packages.x86_64-linux.default = latest.legacyPackages.x86_64-linux.buildEnv {
       name = "bonjour-default";
       paths = [
-        ( import ./system.nix { pkgs = latest.legacyPackages.x86_64-linux; } )
-        ( import ./gnomeExtensions.nix { pkgs = latest.legacyPackages.x86_64-linux; } )
-        ( import ./apps.nix { pkgs = latest.legacyPackages.x86_64-linux; } )
-        ( import ./fallback.nix { pkgs = stable.legacyPackages.x86_64-linux; } )
+        ( latest.legacyPackages.x86_64-linux.callPackage ./systemTools.nix {fallbacks = stable.legacyPackages.x86_64-linux;} )
+        ( latest.legacyPackages.x86_64-linux.callPackage ./gnomeExtensions.nix {} )
+        ( latest.legacyPackages.x86_64-linux.callPackage ./applications.nix {} )
       ];
     };
   };
