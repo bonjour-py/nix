@@ -10,6 +10,7 @@
         ( latest.legacyPackages.x86_64-linux.callPackage ./systemTools.nix {fallbacks = stable.legacyPackages.x86_64-linux;} )
         ( latest.legacyPackages.x86_64-linux.callPackage ./gnomeExtensions.nix {} )
         ( latest.legacyPackages.x86_64-linux.callPackage ./applications.nix {} )
+        ( latest.legacyPackages.x86_64-linux.callPackage ./config {} ).default
       ];
     };
   };
