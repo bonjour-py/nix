@@ -1,9 +1,9 @@
-{fallbacks, callPackage, buildEnv}: buildEnv {
+{latest, stable}: latest.buildEnv {
   name = "bonjour-default";
   paths = [
-    ( callPackage ./systemTools.nix {} )
-    ( callPackage ./gnomeExtensions.nix {} )
-    ( callPackage ./applications.nix {} )
-    ( callPackage ./appimage.nix { inherit fallbacks; } )
+    ( latest.callPackage ./systemTools.nix {} )
+    ( latest.callPackage ./gnomeExtensions.nix {} )
+    ( latest.callPackage ./applications.nix {} )
+    ( latest.callPackage ./appimage.nix { fallbacks = stable; } )
   ];
 }
