@@ -1,5 +1,5 @@
 {pkgs, buildEnv}: buildEnv {
-  name = "apps";
+  name = "applications";
   paths = with pkgs;[
     remmina
     firefox

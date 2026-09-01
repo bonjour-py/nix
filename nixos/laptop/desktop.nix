@@ -20,16 +20,4 @@
   };
   fonts.enableDefaultPackages = true;
   users.users.bonjour.extraGroups = ["networkmanager"];
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-    package = pkgs.appimage-run.override {
-      extraPkgs = pkgs: [
-        pkgs.git
-        pkgs.libva
-        pkgs.ffmpeg
-        pkgs.libepoxy
-      ];
-    };
-  };
 }
