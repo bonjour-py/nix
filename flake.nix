@@ -11,24 +11,15 @@
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     stable.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixos = {
-      url = "./nixos";
-      inputs = {
-        latest.follows = "latest";
-        stable.follows = "stable";
-      };
-    };
-    profile = {
-      url = "./profile";
-      inputs = {
-        latest.follows = "latest";
-        stable.follows = "stable";
-      };
-    };
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = {self, nixos, profile, ...}:{
-    nixosConfigurations = nixos.nixosConfigurations;
-    packages = profile.packages;
+  outputs = {self, latest, stable, agenix, ...}:{
+    nixosConfigurations = import ./nixos {
+      latest = latest.lib.nixosSystem;
+      stable = stable.lib.nixosSystem;
+      agenix = agenix.nixosModules.default;
+    };
+    packages.x86_64-linux.default = latest.legacyPackages.x86_64-linux.callPackage ./profile {fallbacks = stable.legacyPackages.x86_64-linux;};
   };
 }

@@ -24,7 +24,6 @@
     "darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixos",
           "agenix",
           "nixpkgs"
         ]
@@ -47,7 +46,6 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixos",
           "agenix",
           "nixpkgs"
         ]
@@ -82,26 +80,6 @@
         "type": "github"
       }
     },
-    "nixos": {
-      "inputs": {
-        "agenix": "agenix",
-        "latest": [
-          "latest"
-        ],
-        "stable": [
-          "stable"
-        ]
-      },
-      "locked": {
-        "path": "./nixos",
-        "type": "path"
-      },
-      "original": {
-        "path": "./nixos",
-        "type": "path"
-      },
-      "parent": []
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1754028485,
@@ -118,30 +96,10 @@
         "type": "github"
       }
     },
-    "profile": {
-      "inputs": {
-        "latest": [
-          "latest"
-        ],
-        "stable": [
-          "stable"
-        ]
-      },
-      "locked": {
-        "path": "./profile",
-        "type": "path"
-      },
-      "original": {
-        "path": "./profile",
-        "type": "path"
-      },
-      "parent": []
-    },
     "root": {
       "inputs": {
+        "agenix": "agenix",
         "latest": "latest",
-        "nixos": "nixos",
-        "profile": "profile",
         "stable": "stable"
       }
     },
