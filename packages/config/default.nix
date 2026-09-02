@@ -1,4 +1,4 @@
-{pkgs, callPackage, buildEnv, writeTextFile}: rec {
+{ callPackage, buildEnv }: rec {
   git = callPackage ./git.nix {};
   ssh = callPackage ./ssh.nix {};
   default = buildEnv {

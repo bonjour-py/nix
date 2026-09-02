@@ -9,6 +9,6 @@
     gnome-firmware
     gnome-logs
     dconf-editor
-    pinit
+    firefox
   ];
 }

@@ -20,7 +20,7 @@
       stable = stable.lib.nixosSystem;
       agenix = agenix.nixosModules.default;
     };
-    packages.x86_64-linux.default = import ./profile {
+    packages.x86_64-linux = import ./packages {
       latest = latest.legacyPackages.x86_64-linux;
       stable = stable.legacyPackages.x86_64-linux;
     };
