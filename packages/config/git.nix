@@ -1,4 +1,4 @@
-{pkgs, lib, writeTextDir}: writeTextDir "/config/git/config" (
+{pkgs, lib, writeTextDir}: writeTextDir "/etc/xdg/git/config" (
   lib.generators.toGitINI {
     init.defaultBranch = "main";
     user = {

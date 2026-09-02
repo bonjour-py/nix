@@ -1,7 +1,7 @@
 { callPackage, buildEnv }: rec {
   git = callPackage ./git.nix {};
   ssh = callPackage ./ssh.nix {};
-  default = buildEnv {
+  all = buildEnv {
     name = "config";
     paths = [
       git
