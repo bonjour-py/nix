@@ -1,13 +1,19 @@
-{pkgs, buildEnv, makeDesktopItem}: buildEnv {
+{ pkgs, symlinkJoin, writeShellApplication, makeDesktopItem }: symlinkJoin {
   name = "work.wxwork";
   paths = [
-    pkgs.remmina
+    (
+      writeShellApplication {
+        name = "work.wxwork";
+        runtimeInputs = [ pkgs.remmina ];
+        text = ''remmina -c rdp://bonjour:zdU76+p0wBg=@192.168.110.92 --set-option sound=local --set-option scale=2 --set-option multitransport=1'';
+      }
+    )
     (
       makeDesktopItem {
         name = "work.wxwork";
         desktopName = "企业微信";
-        icon = "/home/bonjour/.local/share/icons/scalable/apps/huidusec.ico";
-        exec = "remmina -c /home/bonjour/.local/share/remmina/huidusec_rdp_wxwork_192-168-110-92.remmina";
+        icon = ./wxwork.ico;
+        exec = "work.wxwork";
       }
     )
   ];

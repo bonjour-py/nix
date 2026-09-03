@@ -18,6 +18,5 @@
       engines = [ pkgs.ibus-engines.libpinyin ];
     };
   };
-  fonts.enableDefaultPackages = true;
   users.users.bonjour.extraGroups = ["networkmanager"];
 }

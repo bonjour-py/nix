@@ -9,6 +9,5 @@
     gnome-firmware
     gnome-logs
     dconf-editor
-    firefox
   ];
 }

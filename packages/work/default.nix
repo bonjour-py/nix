@@ -1,4 +1,4 @@
-{pkgs, buildEnv, callPackage}: rec {
+{buildEnv, callPackage}: rec {
   kali = callPackage ./kaliApps.nix {};
   wxwork = callPackage ./wxwork.nix {};
   all = buildEnv {

@@ -12,7 +12,7 @@
       makeDesktopItem {
         name = "work.kaliApps";
         desktopName = "kali apps";
-        icon = "/home/bonjour/.local/share/icons/scalable/apps/kali.svg";
+        icon = ./kali.svg;
         exec = "work.kaliApps wofi --show run";
         actions = {
           ssh = {

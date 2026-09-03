@@ -1,4 +1,4 @@
-{ callPackage, buildEnv }: rec {
+{ pkgs, callPackage, buildEnv }: rec {
   qq = callPackage ./qq.nix {};
   cutecloud = callPackage ./cutecloud.nix {};
   bitwarden = callPackage ./bitwarden.nix {};
@@ -12,6 +12,10 @@
       bitwarden
       owncloud
       vscode
+      ( callPackage ./systemTools.nix {} )
+      ( callPackage ./gnomeExtensions.nix {} )
+      pkgs.remmina
+      pkgs.firefox
     ];
   };
 }

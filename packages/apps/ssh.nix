@@ -1,4 +1,4 @@
-{pkgs, writeTextDir}: writeTextDir "/etc/ssh/ssh_config" ''
+{writeText}: writeText "ssh" ''
   Host server
   	HostName 192.168.110.98
   Host work
