@@ -1,11 +1,10 @@
-{pkgs, buildEnv, callPackage}: buildEnv {
+{ symlinkJoin, callPackage }: symlinkJoin {
   name = "work";
-  paths = [
-    ( callPackage ./work.nix {} )
-    ( callPackage ./menu.nix {} )
-    ( callPackage ./firefox.nix {} )
-    ( callPackage ./libreoffice.nix {} )
-    ( callPackage ./wireshark.nix {} )
-    ( callPackage ./wxwork.nix {} )
+  paths = let bin = callPackage ./work.nix {}; in [
+    ( callPackage ./menu.nix { inherit bin; } )
+    ( callPackage ./firefox.nix { inherit bin; } )
+    ( callPackage ./libreoffice.nix { inherit bin; } )
+    ( callPackage ./wireshark.nix { inherit bin; } )
+    ( callPackage ./wxwork.nix { inherit bin; } )
   ];
 }

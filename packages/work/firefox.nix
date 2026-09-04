@@ -1,6 +1,6 @@
-{ makeDesktopItem }: makeDesktopItem {
+{ bin, makeDesktopItem }: makeDesktopItem {
   name = "work.firefox";
   desktopName = "work firefox";
   icon = ./icons/kali.svg;
-  exec = "work waypipe firefox";
+  exec = "${bin} waypipe firefox";
 }

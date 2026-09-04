@@ -1,8 +1,8 @@
 { appimageTools, fetchurl }: appimageTools.wrapAppImage rec {
-  pname = "VSCode";
-  version = "1.136.1";
-  src = appimageTools.extract {
-    inherit pname version;
+  name = "VSCode";
+  src = appimageTools.extract rec {
+    pname = name;
+    version = "1.136.1";
     src = fetchurl {
       url = "https://github.com/valicm/VSCode-AppImage/releases/download/${version}/VSCode-x86_64.AppImage";
       hash = "sha256-887+kWoOuLa+o3dIrmekSdF3y3+Z7EPrqj0HwNhhBWc=";

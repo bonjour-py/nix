@@ -1,4 +1,4 @@
-{pkgs, callPackage, writeShellApplication}: writeShellApplication {
+{pkgs, writeShellApplication}: writeShellApplication {
   name = "work";
   runtimeInputs = with pkgs;[ 
     waypipe

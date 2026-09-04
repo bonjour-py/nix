@@ -1,8 +1,8 @@
 { appimageTools, fetchurl }: appimageTools.wrapAppImage rec {
-  pname = "Bitwarden";
-  version = "2026.8.0";
-  src = appimageTools.extract {
-    inherit pname version;
+  name = "Bitwarden";
+  src = appimageTools.extract rec {
+    pname = name;
+    version = "2026.8.0";
     src = fetchurl {
       url = "https://github.com/bitwarden/clients/releases/download/desktop-v${version}/Bitwarden-${version}-x86_64.AppImage";
       hash = "sha256-OfoOjqhjaShrUGLiPjYt2ISxBESLoJpITvWKPTevTfo=";

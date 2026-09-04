@@ -1,6 +1,6 @@
-{ makeDesktopItem }: makeDesktopItem {
+{ bin, makeDesktopItem }: makeDesktopItem {
   name = "work.libreoffice";
   desktopName = "work libreoffice";
   icon = ./icons/kali.svg;
-  exec = "work waypipe libreoffice";
+  exec = "${bin} waypipe libreoffice";
 }

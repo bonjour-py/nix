@@ -1,8 +1,8 @@
-{ appimageTools, fetchurl }: appimageTools.wrapAppImage rec {
-  pname = "QQ";
-  version = "9.9.33";
-  src = appimageTools.extract {
-    inherit pname version;
+{ runCommand, appimageTools, fetchurl }: appimageTools.wrapAppImage rec {
+  name = "QQ";
+  src = appimageTools.extract rec {
+    pname = name;
+    version = "9.9.33";
     src = fetchurl {
       url = "https://qqdl.gtimg.cn/qqfile/QQNT/${version}/release/3f89efc5/QQ_3.2.32_260812_x86_64_01.AppImage";
       hash = "sha256-MRBDUQ1k/ABu0lLOiufxM2YPH2eO/wHPJV4pB8H0LX8=";

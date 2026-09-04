@@ -1,8 +1,8 @@
 { appimageTools, fetchurl }: appimageTools.wrapAppImage rec {
-  pname = "OwnCloud";
-  version = "7.1.0";
-  src = appimageTools.extract {
-    inherit pname version;
+  name = "OwnCloud";
+  src = appimageTools.extract rec {
+    pname = name;
+    version = "7.1.0";
     src = fetchurl {
       url = "https://download.owncloud.com/desktop/ownCloud/stable/7.1/linux-appimage/ownCloud-${version}.19041-x86_64.AppImage";
       hash = "sha256-aCeCR0nobEx2Zvr8JDJpPYH2ZjGZjFH2Nid2vdikcM4=";
