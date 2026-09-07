@@ -1,16 +1,21 @@
-{ appimageTools, fetchurl }: appimageTools.wrapAppImage rec {
+{ stdenvNoCC, copyDesktopItems, appimageTools, fetchurl }: stdenvNoCC.mkDerivation rec {
   name = "OwnCloud";
-  src = appimageTools.extract rec {
-    pname = name;
-    version = "7.1.0";
-    src = fetchurl {
-      url = "https://download.owncloud.com/desktop/ownCloud/stable/7.1/linux-appimage/ownCloud-${version}.19041-x86_64.AppImage";
-      hash = "sha256-aCeCR0nobEx2Zvr8JDJpPYH2ZjGZjFH2Nid2vdikcM4=";
+  src = appimageTools.wrapAppImage rec {
+    inherit name;
+    src = appimageTools.extract rec {
+      pname = name;
+      version = "7.1.0";
+      src = fetchurl {
+        url = "https://download.owncloud.com/desktop/ownCloud/stable/7.1/linux-appimage/ownCloud-${version}.19041-x86_64.AppImage";
+        hash = "sha256-aCeCR0nobEx2Zvr8JDJpPYH2ZjGZjFH2Nid2vdikcM4=";
+      };
     };
+    extraInstallCommands = ''substitute ${src}/owncloud.desktop $out/OwnCloud.desktop --replace-fail "Exec=owncloud" "Exec=$out/bin/OwnCloud" --replace-fail "Icon=owncloud" "Icon=${src}/owncloud.png"'';
   };
-  extraInstallCommands = ''
-    install -m 444 -D ${src}/owncloud.desktop $out/share/applications/OwnCloud.desktop
-    install -m 444 -D ${src}/usr/share/icons/hicolor/256x256/apps/owncloud.png $out/share/icons/hicolor/256x256/apps/OwnCloud.png
-    substituteInPlace $out/share/applications/OwnCloud.desktop --replace-fail 'Exec=owncloud' 'Exec=OwnCloud' --replace-fail 'Icon=owncloud' 'Icon=OwnCloud'
+  nativeBuildInputs = [ copyDesktopItems ];
+  desktopItems = [ "${src}/OwnCloud.desktop" ];
+  postInstall = ''
+    mkdir -p $out/etc/xdg/autostart
+    substitute ${./autostart/OwnCloud.desktop} $out/etc/xdg/autostart/OwnCloud.desktop --replace-fail "Exec=OwnCloud" "Exec=${src}/bin/OwnCloud"
   '';
 }
