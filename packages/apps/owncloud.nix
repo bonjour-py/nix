@@ -16,14 +16,6 @@
   desktopItems = [ "${src}/OwnCloud.desktop" ];
   postInstall = ''
     mkdir -p $out/etc/xdg/autostart
-    ln -s ${
-      makeDesktopItem {
-        name = "OwnCloud-autostart";
-        desktopName = "ownCloud";
-        genericName = "File Synchronizer";
-        comment = "CuteCloud startup script";
-        exec = "${src}/bin/OwnCloud";
-      }
-    }/share/applications/OwnCloud-autostart.desktop $out/etc/xdg/autostart/OwnCloud.desktop
+    substitute ${src}/OwnCloud.desktop $out/etc/xdg/autostart/OwnCloud.desktop --replace-fail " --showsettings" ""
   '';
 }

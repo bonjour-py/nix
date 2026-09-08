@@ -16,13 +16,6 @@
   desktopItems = [ "${src}/Bitwarden.desktop" ];
   postInstall = ''
     mkdir -p $out/etc/xdg/autostart
-    ln -s ${
-      makeDesktopItem {
-        name = "Bitwarden-autostart";
-        desktopName = "Bitwarden";
-        comment = "Bitwarden startup script";
-        exec = "${src}/bin/Bitwarden --autostart";
-      }
-    }/share/applications/Bitwarden-autostart.desktop $out/etc/xdg/autostart/Bitwarden.desktop
+    substitute ${src}/Bitwarden.desktop $out/etc/xdg/autostart/Bitwarden.desktop --replace-fail "--no-sandbox %U" "--autostart"
   '';
 }
