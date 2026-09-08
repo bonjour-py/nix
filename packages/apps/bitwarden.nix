@@ -1,4 +1,4 @@
-{ stdenvNoCC, copyDesktopItems, appimageTools, fetchurl }: stdenvNoCC.mkDerivation rec {
+{ stdenvNoCC, appimageTools, fetchurl, copyDesktopItems, makeDesktopItem }: stdenvNoCC.mkDerivation rec {
   name = "Bitwarden";
   src = appimageTools.wrapAppImage rec {
     inherit name;
@@ -16,6 +16,13 @@
   desktopItems = [ "${src}/Bitwarden.desktop" ];
   postInstall = ''
     mkdir -p $out/etc/xdg/autostart
-    substitute ${./autostart/Bitwarden.desktop} $out/etc/xdg/autostart/Bitwarden.desktop --replace-fail "Exec=Bitwarden" "Exec=${src}/bin/Bitwarden"
+    ln -s ${
+      makeDesktopItem {
+        name = "Bitwarden-autostart";
+        desktopName = "Bitwarden";
+        comment = "Bitwarden startup script";
+        exec = "${src}/bin/Bitwarden --autostart";
+      }
+    }/share/applications/Bitwarden-autostart.desktop $out/etc/xdg/autostart/Bitwarden.desktop
   '';
 }

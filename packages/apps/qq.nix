@@ -1,4 +1,4 @@
-{ stdenvNoCC, copyDesktopItems, appimageTools, fetchurl }: stdenvNoCC.mkDerivation rec {
+{ stdenvNoCC, appimageTools, fetchurl, copyDesktopItems }: stdenvNoCC.mkDerivation rec {
   name = "QQ";
   src = appimageTools.wrapAppImage rec {
     inherit name;

@@ -1,4 +1,4 @@
-{ stdenvNoCC, copyDesktopItems, appimageTools, fetchurl }: stdenvNoCC.mkDerivation rec {
+{ stdenvNoCC, appimageTools, fetchurl, copyDesktopItems, makeDesktopItem }: stdenvNoCC.mkDerivation rec {
   name = "CuteCloud";
   src = appimageTools.wrapAppImage rec {
     inherit name;
@@ -17,6 +17,13 @@
   desktopItems = [ "${src}/CuteCloud.desktop" ];
   postInstall = ''
     mkdir -p $out/etc/xdg/autostart
-    substitute ${./autostart/CuteCloud.desktop} $out/etc/xdg/autostart/CuteCloud.desktop --replace-fail "Exec=CuteCloud" "Exec=${src}/bin/CuteCloud"
+    ln -s ${
+      makeDesktopItem {
+        name = "CuteCloud-autostart";
+        desktopName = "CuteCloud";
+        comment = "CuteCloud startup script";
+        exec = "${src}/bin/CuteCloud";
+      }
+    }/share/applications/CuteCloud-autostart.desktop $out/etc/xdg/autostart/CuteCloud.desktop
   '';
 }

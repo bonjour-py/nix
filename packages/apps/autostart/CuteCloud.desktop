@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=CuteCloud
-Comment=CuteCloud startup script
-Exec=CuteCloud
-StartupNotify=false
-Terminal=false

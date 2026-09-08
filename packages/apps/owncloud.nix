@@ -1,4 +1,4 @@
-{ stdenvNoCC, copyDesktopItems, appimageTools, fetchurl }: stdenvNoCC.mkDerivation rec {
+{ stdenvNoCC, appimageTools, fetchurl, copyDesktopItems, makeDesktopItem }: stdenvNoCC.mkDerivation rec {
   name = "OwnCloud";
   src = appimageTools.wrapAppImage rec {
     inherit name;
@@ -16,6 +16,14 @@
   desktopItems = [ "${src}/OwnCloud.desktop" ];
   postInstall = ''
     mkdir -p $out/etc/xdg/autostart
-    substitute ${./autostart/OwnCloud.desktop} $out/etc/xdg/autostart/OwnCloud.desktop --replace-fail "Exec=OwnCloud" "Exec=${src}/bin/OwnCloud"
+    ln -s ${
+      makeDesktopItem {
+        name = "OwnCloud-autostart";
+        desktopName = "ownCloud";
+        genericName = "File Synchronizer";
+        comment = "CuteCloud startup script";
+        exec = "${src}/bin/OwnCloud";
+      }
+    }/share/applications/OwnCloud-autostart.desktop $out/etc/xdg/autostart/OwnCloud.desktop
   '';
 }

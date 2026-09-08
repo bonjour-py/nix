@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Bitwarden
-Comment=Bitwarden startup script
-Exec=Bitwarden --autostart
-StartupNotify=false
-Terminal=false
