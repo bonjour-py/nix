@@ -9,8 +9,8 @@
     ./hardware.nix
     ./network.nix
     ./hostname.nix
-    ./wireguard
-    ../default/wireguard.nix
+    # ./wireguard
+    # ../default/wireguard.nix
     ./incus
   ];
 }
