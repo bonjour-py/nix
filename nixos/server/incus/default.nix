@@ -4,7 +4,7 @@
     ./work.nix
   ];
   fileSystems."/var/lib/incus" = {
-    device = "UUID=297e0847-bab9-4d30-90e0-6163e404ebcf";
+    device = "UUID=df0b2bea-b75f-4d7a-a94c-8fb4994e43df";
     fsType = "btrfs";
     options = [ "subvol=@incus" "compress=zstd" ];
   };

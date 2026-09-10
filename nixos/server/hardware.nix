@@ -8,17 +8,17 @@
       options = ["fmask=0077" "dmask=0077"];
     };
     "/" = {
-      device = "UUID=297e0847-bab9-4d30-90e0-6163e404ebcf";
+      device = "UUID=df0b2bea-b75f-4d7a-a94c-8fb4994e43df";
       fsType = "btrfs";
       options = [ "subvol=@rootfs" "compress=zstd" ];
     };
     "/home" = {
-      device = "UUID=297e0847-bab9-4d30-90e0-6163e404ebcf";
+      device = "UUID=df0b2bea-b75f-4d7a-a94c-8fb4994e43df";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" ];
     };
     "/nix" = {
-      device = "UUID=297e0847-bab9-4d30-90e0-6163e404ebcf";
+      device = "UUID=df0b2bea-b75f-4d7a-a94c-8fb4994e43df";
       fsType = "btrfs";
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
