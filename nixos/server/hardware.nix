@@ -1,5 +1,8 @@
 {config, ...}:{
-  boot.initrd.availableKernelModules = ["ahci" "ehci_pci" "megaraid_sas" "usb_storage" "usbhid" "sd_mod"];
+  boot = {
+    initrd.availableKernelModules = [ "ahci" "ehci_pci" "megaraid_sas" "usb_storage" "usbhid" "sd_mod" ];
+    kernelModules = [ "kvm-intel" ];
+  }
   hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
   fileSystems = {
     "/boot" = {
