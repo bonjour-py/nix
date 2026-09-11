@@ -64,7 +64,7 @@
       ];
     };
   };
-  security.apparmor.enable = true;
+  # security.apparmor.enable = true;
   systemd.network.networks."10-incusbr-bonjour" = {
     name = "incusbr-bonjour";
     address = ["192.168.59.30/28"];
