@@ -4,10 +4,10 @@
     inherit name;
     src = appimageTools.extract rec {
       pname = name;
-      version = "1.137.0";
+      version = "1.138.0";
       src = fetchurl {
         url = "https://github.com/valicm/VSCode-AppImage/releases/download/${version}/VSCode-x86_64.AppImage";
-        hash = "sha256-nVfbVNdrnrleauL9MJV/HxwpFB9FiU31m2T/EYZJa6M=";
+        hash = "sha256-1JWq4pjTceSdjSnRXaUNTIJrIHRr96V5akLMZFe6pCs=";
       };
     };
     extraPkgs = pkgs: [ pkgs.git ];
