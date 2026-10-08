@@ -4,10 +4,10 @@
     inherit name;
     src = appimageTools.extract rec {
       pname = name;
-      version = "2026.8.0";
+      version = "2026.9.1";
       src = fetchurl {
         url = "https://github.com/bitwarden/clients/releases/download/desktop-v${version}/Bitwarden-${version}-x86_64.AppImage";
-        hash = "sha256-OfoOjqhjaShrUGLiPjYt2ISxBESLoJpITvWKPTevTfo=";
+        hash = "sha256-rDXASNnIQl0HFMf/xgpg78h+s1lFVbipI7dDinJHlUk=";
       };
     };
     extraInstallCommands = ''substitute ${src}/bitwarden.desktop $out/Bitwarden.desktop --replace-fail "Exec=AppRun" "Exec=$out/bin/Bitwarden" --replace-fail "Icon=bitwarden" "Icon=${src}/bitwarden.png"'';
