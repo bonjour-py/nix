@@ -7,7 +7,7 @@
     pkgs.firefox
     ( callPackage ./vscode.nix {} )
     ( callPackage ./bitwarden.nix {} )
-    ( callPackage ./cutecloud.nix {} )
+    ( callPackage ./flclash.nix {} )
     ( callPackage ./owncloud.nix {} )
     ( callPackage ./qq.nix {} )
   ];
