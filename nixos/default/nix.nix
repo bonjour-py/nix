@@ -7,6 +7,7 @@
         "https://mirror.sjtu.edu.cn/nix-channels/store"
       ];
       trusted-users = [ "@wheel" ];
+      use-xdg-base-directories = true;
     };
     gc.automatic = true;
   };
