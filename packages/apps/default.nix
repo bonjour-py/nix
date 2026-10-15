@@ -6,7 +6,7 @@
     pkgs.remmina
     pkgs.firefox
     ( callPackage ./vscode.nix {} )
-    ( callPackage ./bitwarden.nix {} )
+    pkgs.bitwarden-desktop
     ( callPackage ./flclash.nix {} )
     ( callPackage ./owncloud.nix {} )
     ( callPackage ./qq.nix {} )
