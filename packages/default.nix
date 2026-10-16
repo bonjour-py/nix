@@ -1,9 +1,4 @@
-{latest, stable}: {
-  default = latest.buildEnv {
-    name = "bonjour-default";
-    paths = [
-      ( latest.callPackage ./apps {} )
-      ( latest.callPackage ./work {} )
-    ];
-  };
+{latest, stable}: latest.lib.filesystem.packagesFromDirectoryRecursive {
+  callPackage = latest.callPackage;
+  directory = ./.;
 }
