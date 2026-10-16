@@ -10,5 +10,6 @@
     ( callPackage ./flclash.nix {} )
     ( callPackage ./owncloud.nix {} )
     ( callPackage ./qq.nix {} )
+    ( callPackage ./wechat.nix {} )
   ];
 }
