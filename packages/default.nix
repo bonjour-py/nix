@@ -1,4 +1,4 @@
 {latest, stable}: latest.lib.filesystem.packagesFromDirectoryRecursive {
-  callPackage = latest.callPackage;
-  directory = ./.;
+  inherit (import latest {system = "x86_64-linux"; config.allowUnfree = true;}) callPackage newScope;
+  directory = ./pkgs;
 }

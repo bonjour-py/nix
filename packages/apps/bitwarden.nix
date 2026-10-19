@@ -1,1 +1,0 @@
-{bitwarden-desktop}:bitwarden-desktop
