@@ -1,5 +1,5 @@
 { 
-  buildEnv, 
+  buildEnv,
   system, work,
   remmina, firefox, bitwarden-desktop, vscode, flclash, owncloud, qq, wechat
 }: 
@@ -10,7 +10,7 @@ buildEnv {
     remmina
     firefox
     bitwarden-desktop
-    ( vscode.fhsWithPackages (pkgs: [ pkgs.git ]) )
+    vscode
     flclash
     owncloud
     qq
