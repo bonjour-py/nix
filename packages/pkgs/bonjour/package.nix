@@ -1,18 +1,6 @@
-{ buildEnv, callPackage, 
-  remmina, firefox, bitwarden-desktop, vscode, flclash, owncloud, qq, wechat
-}: 
-buildEnv {
-  name = "bonjour-default";
-  paths = [ 
-    ( callPackage ./system {} )
-    remmina
-    firefox
-    bitwarden-desktop
-    ( vscode.fhsWithPackages (pkgs: [ pkgs.git ]) )
-    flclash
-    owncloud
-    qq
-    wechat
-    ( callPackage ./work {} )
-  ];
-}
+{lib, callPackage, newScope}: (
+  lib.filesystem.packagesFromDirectoryRecursive {
+    inherit callPackage newScope;
+    directory = ./pkgs;
+  }
+).default

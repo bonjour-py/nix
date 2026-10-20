@@ -1,6 +1,9 @@
-{pkgs, buildEnv}: buildEnv {
-  name = "gnomeExtensions";
-  paths = with pkgs.gnomeExtensions;[
+{ buildEnv,
+  gnomeExtensions
+}:
+buildEnv {
+  name = "bonjour-gnomeExtensions";
+  paths = with gnomeExtensions;[
     dash-to-dock
     gtk4-desktop-icons-ng-ding
     appindicator
