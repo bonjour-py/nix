@@ -16,9 +16,7 @@
 
   outputs = {self, latest, stable, agenix, ...}:{
     nixosConfigurations = import ./nixos {
-      latest = latest.lib.nixosSystem;
-      stable = stable.lib.nixosSystem;
-      agenix = agenix.nixosModules.default;
+      inherit latest stable agenix;
     };
     packages.x86_64-linux = import ./packages {
       inherit latest stable;

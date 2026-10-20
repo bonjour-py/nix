@@ -1,19 +1,19 @@
 {latest, stable, agenix}:{
-  server = stable {
+  server = stable.lib.nixosSystem {
     modules = [
-      agenix
+      agenix.nixosModules.default
       ./server
     ];
   };
-  gateway = stable {
+  gateway = stable.lib.nixosSystem {
     modules = [
-      agenix
+      agenix.nixosModules.default
       ./gateway
     ];
   };
-  laptop = latest {
+  laptop = latest.lib.nixosSystem {
     modules = [
-      agenix
+      agenix.nixosModules.default
       ./laptop
     ];
   };
