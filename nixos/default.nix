@@ -1,20 +1,10 @@
-{latest, stable, agenix}:{
-  server = stable.lib.nixosSystem {
+{latest, stable, agenix}:
+builtins.mapAttrs (
+  name: _:
+  (if name == "laptop" then latest else stable).lib.nixosSystem {
     modules = [
       agenix.nixosModules.default
-      ./server
+      ./hosts/${name}
     ];
-  };
-  gateway = stable.lib.nixosSystem {
-    modules = [
-      agenix.nixosModules.default
-      ./gateway
-    ];
-  };
-  laptop = latest.lib.nixosSystem {
-    modules = [
-      agenix.nixosModules.default
-      ./laptop
-    ];
-  };
-}
+  }
+) (builtins.readDir ./hosts)
