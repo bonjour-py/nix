@@ -1,5 +1,5 @@
 {lib, callPackage, newScope}: (
-  lib.filesystem.packagesFromDirectoryRecursive {
+  lib.packagesFromDirectoryRecursive {
     inherit callPackage newScope;
     directory = ./pkgs;
   }

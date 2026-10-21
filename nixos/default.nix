@@ -1,8 +1,8 @@
 {latest, stable, agenix}:
-latest.legacyPackages.x86_64-linux.lib.mapAttrs' (
+latest.lib.mapAttrs' (
   name: _:
-  latest.legacyPackages.x86_64-linux.lib.nameValuePair
-    (latest.legacyPackages.x86_64-linux.lib.removeSuffix ".nix" name)
+  latest.lib.nameValuePair
+    (latest.lib.removeSuffix ".nix" name)
     (
       import ./configurations/${name} {
         latest = latest.lib.nixosSystem;
