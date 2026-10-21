@@ -1,10 +1,13 @@
 {latest, stable, agenix}:
-builtins.mapAttrs (
+latest.legacyPackages.x86_64-linux.lib.mapAttrs' (
   name: _:
-  (if name == "laptop" then latest else stable).lib.nixosSystem {
-    modules = [
-      agenix.nixosModules.default
-      ./hosts/${name}
-    ];
-  }
-) (builtins.readDir ./hosts)
+  latest.legacyPackages.x86_64-linux.lib.nameValuePair
+    (latest.legacyPackages.x86_64-linux.lib.removeSuffix ".nix" name)
+    (
+      import ./configurations/${name} {
+        latest = latest.lib.nixosSystem;
+        stable = stable.lib.nixosSystem;
+        agenix = agenix.nixosModules.default;
+      }
+    )
+) (builtins.readDir ./configurations)
