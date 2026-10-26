@@ -4,10 +4,10 @@
     inherit name;
     src = appimageTools.extract rec {
       pname = name;
-      version = "0.9.1";
+      version = "0.9.2";
       src = fetchurl {
         url = "https://github.com/chen08209/FlClash/releases/download/v${version}/FlClash-${version}-linux-amd64.AppImage";
-        hash = "sha256-KxMlGR3eNl5gNu9Bqsb0Q65aFdxp+sYdxNNd2XKfkKM=";
+        hash = "sha256-/bIUDj83IklL1YAIXR5t3z+LqiHGvg1H3iCmY3xkcvw=";
       };
     };
     extraPkgs = pkgs: [ pkgs.libepoxy ];
