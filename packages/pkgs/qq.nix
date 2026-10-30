@@ -10,6 +10,7 @@
         hash = "sha256-MRBDUQ1k/ABu0lLOiufxM2YPH2eO/wHPJV4pB8H0LX8=";
       };
     };
+    extraPkgs = pkgs: [ pkgs.libgcrypt ];
     extraInstallCommands = ''substitute ${src}/qq.desktop $out/QQ.desktop --replace-fail "Exec=AppRun" "Exec=$out/bin/QQ" --replace-fail "Icon=/opt/QQ/resources/app/512x512.png" "Icon=${src}/qq.png"'';
   };
   nativeBuildInputs = [ copyDesktopItems ];
