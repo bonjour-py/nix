@@ -1,5 +1,8 @@
 {
-  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_blk" ];
+  boot = {
+    initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_blk" ];
+    zswap.enable = true;
+  };
   fileSystems = {
     "/boot" = {
       device = "UUID=3D8C-2E2A";

@@ -3,6 +3,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules = [ "ehci_pci" "nvme" "xhci_pci" "usbhid" "uas" "sd_mod" ];
     kernelModules = [ "kvm-amd" ];
+    zswap.enable = true;
   };
   hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
   hardware.enableAllFirmware = true;
