@@ -32,10 +32,7 @@
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
   };
-  services.btrfs.autoScrub = {
-    enable = true;
-    fileSystems = [ "/" ];
-  };
+  services.btrfs.autoScrub.enable = true;
   swapDevices = [
     {
       device = "/.swapfile";
