@@ -5,8 +5,10 @@
     kernelModules = [ "kvm-amd" ];
     zswap.enable = true;
   };
-  hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
-  hardware.enableAllFirmware = true;
+  hardware = {
+    cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
+    enableAllFirmware = true;
+  };
   nixpkgs.config.allowUnfree = true;
   fileSystems = {
     "/boot" = {
@@ -39,6 +41,7 @@
       device = "/.swapfile";
       randomEncryption.enable = true;
       size = 16*1024;
+      options = ["discard"];
     }
   ];
 }
