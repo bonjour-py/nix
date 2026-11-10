@@ -5,10 +5,7 @@
     kernelModules = [ "kvm-amd" ];
     zswap.enable = true;
   };
-  hardware = {
-    cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
-    enableAllFirmware = true;
-  };
+  hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
   fileSystems = {
     "/boot" = {
